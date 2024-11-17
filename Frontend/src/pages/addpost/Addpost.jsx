@@ -181,7 +181,7 @@ const Addpost = () => {
                             </span>
                         </div>
                     </div>
-                    <button className='addBtn' disabled={isLoading}> 
+                    <button type ='submit' className='addBtn' disabled={isLoading}> 
                         {isLoading ? <FaSpinner/> : 'Add Post'}
                     </button>
                 </form>
@@ -210,7 +210,7 @@ const Addpost = () => {
                 }}/>
             </div>
             <div className="btnBox">
-                <button className='addBtnMd' disabled={isLoading}> 
+                <button type= 'submit' className='addBtnMd' disabled={isLoading}> 
                     {isLoading ? <FaSpinner/> : 'Add'}
                 </button>
             </div>
