@@ -1,7 +1,10 @@
 import mongoose from "mongoose";
 import app from "./App.js"
 
-const DB = process.env.DATABASE_URL;
+let DB;
+if(process.env.NODE_ENV === "development") {
+  DB = process.env.DATABASE_URL_LOCAL
+}else {DB = process.env.DATABASE_URL_REMOTE};
 
 (async () => {
   try {
