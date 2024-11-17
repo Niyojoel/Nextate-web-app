@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiRequest = axios.create({
-  baseURL: "http://localhost:5500/api",
+  baseURL: "https://nextate-api.onrender.com",
   withCredentials: true,
 });
 
