@@ -193,7 +193,7 @@ const Editpost = () => {
                         </span>
                      </div>
                 </div>
-                <button className={changeMade === false ? "addBtn changeNotmade" : "addBtn"} disabled={isLoading}> 
+                <button type= 'submit' className={changeMade === false ? "addBtn changeNotmade" : "addBtn"} disabled={isLoading}> 
                     {isLoading ? <FaSpinner/> : 'Edit Post'}
                 </button>
               </form>
@@ -222,7 +222,7 @@ const Editpost = () => {
                 }}/>
             </div>
             <div className="btnBox">
-                <button className='addBtnMd' disabled={isLoading}> 
+                <button type= 'submit' className='addBtnMd' disabled={isLoading}> 
                     {isLoading ? <FaSpinner/> : 'Edit'}
                 </button>
             </div>
