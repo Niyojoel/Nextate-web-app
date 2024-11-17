@@ -70,7 +70,7 @@
 
                     @include md {
                         width: 70%;
-                        font-size: 2.3rem;
+                        font-size: 2rem;
                     }
                     
                     @include sm {
@@ -110,6 +110,10 @@
                             @include lg {
                                 font-size: 1.7rem
                             }
+
+                            @include sm {
+                                font-size: 1.4rem
+                            }
                         }
 
                         h2 {
@@ -118,6 +122,10 @@
 
                             @include lg {
                                 font-size: 1.1rem
+                            }
+
+                            @include sm {
+                                font-size: 1rem
                             }
                         }
                     }
