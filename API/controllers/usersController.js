@@ -1,4 +1,3 @@
-// import prisma from "../lib/prisma.js";
 import User from "../models/userModel.js";
 import SavedPost from "../models/savedPostsModel.js";
 import Post from "../models/postModel.js";

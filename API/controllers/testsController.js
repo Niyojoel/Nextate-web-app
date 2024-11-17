@@ -1,6 +1,4 @@
-// import jwt from "jsonwebtoken"
-import prisma from "../lib/prisma.js";
-
+import jwt from "jsonwebtoken"
 
 export const checkIfLoggedIn = async(req, res) => {
     console.log(req.userId);
