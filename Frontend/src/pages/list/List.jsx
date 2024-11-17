@@ -50,7 +50,7 @@ const List = () => {
             <Suspense fallback={undefined}>
                 <Await resolve={posts.postResponse} errorElement={<h3>Error Loading Page</h3>}>
                     {(postResponse) => {
-                    return <Map locations = {postResponse.data.data.posts}/>
+                    return <Map locations = {postResponse?.data?.data.posts}/>
                     }}
                 </Await>
             </Suspense>
