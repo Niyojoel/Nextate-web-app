@@ -90,7 +90,7 @@ const Profile = () => {
                 <Suspense fallback={<h2>Loading...</h2>}>
                     <Await resolve={data.postResponse} errorElement={<h3>Error Loading Posts</h3>}>
                         {(postResponse) => {
-                          return <Posts dataList={postResponse.data.data.userPosts} noMssgBtn setExpand={setExpand}/>
+                          return postResponse.data.data && <Posts dataList={postResponse.data.data.userPosts} noMssgBtn setExpand={setExpand}/>
                         }}
                     </Await>
                 </Suspense>
@@ -104,7 +104,7 @@ const Profile = () => {
                 <Suspense fallback={<h2>Loading...</h2>}>
                     <Await resolve={data.postResponse} errorElement={<h3>Error Loading Posts</h3>}>
                         {(postResponse) => {
-                          return <Posts dataList={postResponse.data.data.userSavedPosts} setExpand={setExpand}/>
+                          return postResponse.data.data && <Posts dataList={postResponse.data.data.userSavedPosts} setExpand={setExpand}/>
                         }}
                     </Await>
                 </Suspense>
