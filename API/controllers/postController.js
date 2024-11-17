@@ -38,10 +38,9 @@ export const getPosts = async (req, res) => {
           ...(agentId && { user: agentId }),
         });
       };
-
-      console.log(posts.length)
-      console.log((await Post.find({})).length);
-
+        
+      console.log(posts)
+        
       let agent;
       if (agentId) {
         agent = await User.findById(agentId).select(
@@ -84,6 +83,8 @@ export const createPost = async (req, res) => {
       });
 
       await User.findByIdAndUpdate(tokenUserId, {$push: {posts: [post._id]}});
+
+       console.log(post) 
 
       res.status(200).json({message: "Post created successfully", data: post})
     } catch (err){
