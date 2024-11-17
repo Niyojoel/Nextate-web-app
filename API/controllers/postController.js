@@ -59,7 +59,8 @@ export const getPosts = async (req, res) => {
 
 export const createPost = async (req, res) => {
     const {desc, country, size, income, utilities, pets, school, bus, restaurant, mall, church, gym, ...postBody} = req.body;
-
+    console.log(req.body)
+    
     const tokenUserId = req.userId;
 
     try{
@@ -124,10 +125,6 @@ export const editPost = async (req, res) => {
   const id = req.params.id;
   const tokenUserId = req.userId;
   const {desc, country, size, income, utilities, pets, school, bus, restaurant, mall, church, gym, ...postBody} = req.body;
-  console.log(req.files)
-
-  console.log(req.body.images.file);
-  console.log(req.body.images)
 
   try {
     const post = await Post.findById(id);
