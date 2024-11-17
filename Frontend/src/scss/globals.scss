@@ -1,0 +1,280 @@
+@import "./variables.scss";
+@import "./responsive.scss";
+
+.container {
+    width: 100%;
+    height: calc(100vh - 4rem);
+    display: flex;
+
+    &.changeFlex {
+        @include md {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+    }
+
+    &.reverseFlex {
+        @include md {
+            flex-direction: column-reverse;
+        }
+    }
+
+    //Particular to Home, Signin & SignUp
+    &.homeWrapper {
+        position: relative;
+    }
+    //--------------------
+
+    .left {
+        width: 100%;
+        height: 100%;
+        flex: 3;
+        display: flex;
+        overflow-y: auto;
+        transition: all 0.4s ease;
+
+        //Particular to profilePage and addPost
+        &.profileLeft {
+            flex: 4;
+        }
+
+        .resizeLeft {
+            width: max-content;
+            position: sticky;
+            top: 0%;
+            left: 100%;
+            align-self: flex-start;
+            justify-self: start;
+            z-index: 5;
+            background: var(--neutralFaintColor);
+            padding: 0.5rem;
+            border-radius: 0.2rem;
+            cursor: pointer;
+
+            @include md {
+                display: none;
+            }
+
+            svg {
+                width: 1rem;
+                height: 1rem;
+
+                &:hover {
+                    color: black;
+                }
+            }
+        }
+        //-------------------------
+
+        ::-webkit-scrollbar {
+            appearance: none;
+            width: 0.35rem;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: var(--neutralLightColor);
+            border-radius: 0.5rem;
+        }
+
+        ::-webkit-scrollbar-button {
+            appearance: none;
+            height: 2rem;
+        }
+
+        @include md {
+            height: auto;
+            flex: none;
+            align-items: normal;
+        }
+
+        @include sm {
+            align-items: center;
+        }
+
+        .wrapper {
+            width: 95%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+
+            //Particular to Profile and addPost pages
+            &.coverSticky {
+                margin-left: -2rem;
+
+                @include md {
+                    margin-left: 0;
+                }
+            }
+            //--------------------------------
+
+            //Particular to Home, Sign in & SignUp pages
+            .banner {
+                position: absolute;
+                display: none;
+                overflow: hidden;
+                z-index: -1;
+
+                @include md {
+                    display: block;
+                    top: 9.3%;
+                    right: 0%;
+                    width: 50%;
+                    height: 93%;
+                }
+
+                @include sm {
+                    top: 3%;
+                    right: 0%;
+                    width: 62%;
+                }
+
+                img {
+                    @include md {
+                        object-fit: cover;
+                        height: 100%;
+                    }
+
+                    @include sm {
+                        height: 81%;
+                        object-fit: contain;
+                    }
+                }
+            } 
+            //---------------------------------
+
+            @include lg {
+                width: 90%;
+            }
+
+            @include md {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    .right {
+        width: 100%;
+        height: 100%;
+        flex: 2;
+        display: flex;
+        background-color: var(--pageRightBcgColor);
+        align-items: center;
+        justify-content: center;
+
+        //Particular to Profile and Add post pages
+        &.profileRight {
+            flex: 1;
+        }
+
+        //Particular to Home, Sign in & SignUp pages
+        &.homeRight {
+            justify-content: right;
+            align-items: flex-start;
+            height: 100%;
+            position: relative;
+
+            @include md {
+                display: none;
+                position: absolute;
+                width: 0;
+            }
+
+            img {
+                position: absolute;
+                top: 2.3%;
+                right: 0;
+                width: 125%;
+                height: 100%;
+
+
+                @include lg {
+                    right: 0%;
+                    width: 135%;
+                }
+
+
+                @include md {
+                    display: none;
+                }
+            }
+        }
+
+        @include md {
+            height: auto;
+            flex: none;
+        }
+    }
+}
+
+.icon {
+    width: 1rem;
+    height: 1rem;
+    color: var(--fontGreyColor);
+}
+
+.address {
+    font-size: 0.835rem;
+    display: flex;
+    gap: 0.4rem;
+    color: var(--btnBorderColor);
+    text-wrap: wrap;
+}
+
+.price {
+    font-weight: 300;
+    font-size: 1.25rem;
+    padding: 0.325rem;
+    border-radius: 0.325rem;
+    background-color: var(--pageRightBcgColor);
+    max-width: max-content;
+}
+
+.fullImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.userImg {
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.register {
+    display: flex;
+    align-items: center;
+    background-color: var(--btnBcgColor);
+    cursor: pointer;
+    transform: var(--linksTransition);
+
+    &:hover {
+        transform: scale(1.02);
+        color: var(--mediumGreyColor);
+    }
+}
+
+.row1 {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    @include md {
+        height: 100%;
+    }
+
+    .partition {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+        text-wrap: nowrap;
+    }
+}

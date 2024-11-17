@@ -1,0 +1,120 @@
+@import "../../scss/responsive.scss";
+@import "../../scss/variables.scss";
+
+
+.footer {
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    // border-top: 1px solid var(--buyRentActiveColor);
+    background : var(--buyRentActiveColor);
+    margin-top: 1rem;
+    height: max-content;
+    color: var(--darkGreyColor);
+    z-index: 5;
+
+    @include xs {
+        display: none;
+    }
+
+    &.bcgNone {
+        display: block;
+        border-top: none;
+        background: transparent;
+        margin-top: auto;
+
+        @include md {
+            display: none;
+        }
+
+        @include xs {
+            display: block;
+        }
+    } 
+
+    .footerLeft {
+        flex: 2;
+        font-size: 0.95rem;
+
+        @include md {
+            span {
+                display: none;
+            }
+        }
+
+        @include sm {
+            display: none;
+        }
+    }
+
+    .footerRight {
+        flex: 3;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: flex-end;
+
+        @include sm {
+            flex: 1;
+            justify-content: space-between;
+        }
+
+        @include xs {
+            width: 90%;
+            // gap: 2rem;
+            justify-content: space-between;
+            margin: 0 auto;
+            color: var(--fontGreyColor);
+        }
+
+        .col {
+            width: max-content;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+
+            @include xs {
+                flex-direction: column;
+            }
+
+            svg {
+                width: 1rem;
+                height: 1rem;
+                color: var(--cardOverlayColor);
+    
+                @include md {
+                    width: 0.8rem;
+                    height: 0.8rem;
+                }
+            }
+
+            &.contact {
+                @include md {
+                    font-size: 0.95rem;
+                }    
+                @include xs {
+                    font-size: 0.9rem;
+                }    
+            }
+
+            .socialIcons {
+                display: flex;
+                align-items: center;
+                gap: 0.3rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+
+                @include xs {
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+
+}

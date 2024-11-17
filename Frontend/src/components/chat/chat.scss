@@ -1,0 +1,272 @@
+@import '../../scss/variables.scss';
+@import '../../scss/responsive.scss';
+
+
+.chatContainer {
+    height: 95%;
+    width: 100%;
+    // padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+
+    img {
+        width: 2.4rem;
+        height: 2.4rem;
+    }
+
+    .sender {
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+
+        .rmImg {
+            display: none;
+        }
+    }
+
+    ::-webkit-scrollbar {
+        width: 0;
+    }
+
+    .messages {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        overflow-y: auto;
+
+        h1 {
+            font-size: large;
+        }
+
+        .inbox {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            .message {
+                flex: 1;
+                width: 100%;
+                display: flex;
+                border-radius: 0.3rem;
+                gap: 1.5rem;
+                background-color: white;
+                padding: 0.3rem 0.5rem;
+                align-items: center;
+                overflow-y: auto;
+                font-size: 0.95rem;
+
+                .unreadIcon {
+                    background-color: var(--formBtnColor);
+                    width: 0.6rem;
+                    height: 0.6rem;
+                    border-radius: 50%;
+                    visibility: hidden;
+                    opacity: 0;
+                    transition: all 0.2s ease;
+
+                    &.unreadIcon--unread {
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                }
+
+                .mssgBody {
+                    flex: 1;
+                    overflow: hidden;
+                    color: var(--linkHoverColor);
+
+                    &.mssgBody--unread {
+                        color: black;
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+
+                    p {
+                        width: 16rem;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        text-wrap: nowrap;
+                        transition: all 0.8s ease;
+
+                        @include lg {
+                            width: 9rem;
+                        }
+
+                        &.cropMssg {
+                            width: 5rem;
+
+                            @include lg {
+                                width: 4rem;
+                            }
+                        }
+                    }
+                }
+            }
+        } 
+    }
+
+    .chatBox {
+        height: 50%;
+        width: 100%;
+        border: 0.3rem;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        transition: var(--linksTransition), width 0s ease;
+
+        ::-webkit-scrollbar {
+            appearance: initial;
+            width: 0.35rem;
+        }
+    
+        ::-webkit-scrollbar-thumb {
+            background-color: var(--linkHoverColor);
+            border-radius: 0.5rem;
+        }
+    
+        ::-webkit-scrollbar-button {
+            appearance: initial;
+            height: 0.5rem;
+        }
+
+        &.remove {
+            width: 0;
+            height: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        &.fullScreen {
+            height: 100%;
+        }
+
+        .chatTop {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 0.7rem;
+            background-color: var(--btnBcgLightColor);
+
+            .toggleBtns {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+
+                button {
+                    cursor: pointer;
+                    transition: var(--linksTransition);
+    
+                    &:hover {
+                        transform: scale(1.2);
+                        color: var(--fontGreyColor);
+                    }
+
+                    i {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+
+        .chatConsole {
+            flex: 1;
+            background-color: white;
+            padding: 1rem;
+            overflow-y: auto;
+
+            .chatMessages {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                .chatMessage {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: start;
+                    gap: 0.3rem;
+                    font-size: 0.92rem;
+
+                    &:hover span{
+                        height: 1rem;
+                    }
+
+                    &.own {
+                        align-items: end;
+                    }
+
+                    span {
+                        height: 0;
+                        overflow: hidden;
+                        color: var(--fontGreyColor);
+                        font-size: 0.75rem;
+                        background: var(--pageRightBcgColor);
+                        transition: all 0.2s ease-out;
+                    }
+                }
+            }
+        }
+
+        .chatSend {
+            height: 15%;
+            max-height: 3.5rem;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding-top: 2%;
+            background-color: white;
+
+            @include md {
+                height: 19%;
+            }
+
+            @include sm {
+                height: 15%;
+            }
+
+            textarea {
+                flex: 4;
+                height: 100%;
+                padding: 0.5rem;
+                border: 1px solid var(--btnBcgLightColor);
+                border-right: none;
+
+                @include lg {
+                    flex: 3;
+                }
+
+                &:focus {
+                    background-color: var(--neutralFaintColor);
+                    border: 1px solid var(--btnBcgLightColor);
+                    outline: 1px solid var(--btnBcgLightColor);
+                    outline-offset: -1px;
+                }
+            }
+
+            button {
+                height: 100%;
+                flex: 1;
+                background: var(--btnBcgLightColor);
+                cursor: pointer;
+                transition: var(--linksTransition);
+
+                &:hover {
+                    color: var(--mediumGreyColor);
+                    background-color: var(--neutralLightColor);
+                }
+            }
+
+        }
+    }
+}

@@ -1,0 +1,70 @@
+@import "../../scss/responsive.scss";
+@import "../../scss/globals.scss";
+
+.container {
+    .left {
+        .wrapper {
+            &.listWrapper {
+                height: max-content;
+                width: 95%;
+                padding-bottom: 1rem;
+                gap: 3rem;
+
+                @include md {
+                    width: 100%;
+                }
+
+                .postLists {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.5rem;
+                }
+
+                .filterHeader {
+                    display: flex;
+                    align-items: center;
+                    align-self: flex-end;
+
+                    span {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.6rem;
+                        padding: 0.33rem 0.5rem;
+                        // border: 1px solid var(--neutralLightColor);
+                        border-radius: 0.35rem;
+
+                        img {
+                            width: 2.5rem;
+                            height: 2.5rem;
+                        }
+
+                        svg {
+                            color: var(--btnBcgColor);
+                        }
+                    }
+                }
+
+                .propertyList {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.5rem;
+                    padding-right: 0.5rem;
+                    overflow-y: auto;
+                }
+            }
+        }
+    }
+    
+    .right {
+        &.listRight {
+            justify-content: center;
+            height: 100%;
+
+            @include md{
+                height: calc(100vh - 5rem);
+            }
+            // padding-bottom: 1rem;
+        }
+    } 
+}

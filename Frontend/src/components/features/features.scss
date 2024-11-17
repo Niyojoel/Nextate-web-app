@@ -1,0 +1,28 @@
+@import "../../scss/variables.scss";
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    font-size: 0.825rem;
+
+    &.fold {
+        flex-direction: column;
+        width: max-content;
+    }
+
+
+    .feature {
+        background-color: var(--neutralLighterColor);
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.35rem;
+        border-radius: 0.25rem;
+
+        &.bcgWhite {
+            background-color: white;
+        }
+
+    }
+}

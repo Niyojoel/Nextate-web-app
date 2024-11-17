@@ -1,0 +1,128 @@
+@import '../../scss/variables.scss';
+@import '../../scss/responsive.scss';
+
+.search {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    // justify-content: flex-start;
+    background-color: transparent;
+
+    align-items: flex-start;
+    .type {
+        button {
+            padding: 0.8rem 1.3rem;
+            border: 1px solid var(--btnBorderColor);
+            transition: var(--linksTransition);
+            cursor: pointer;
+            border-bottom: none;
+            background-color: white;
+
+            @include sm {
+                // border-bottom: 1px solid var(--btnBorderColor);
+            }
+
+            &:first-child {
+                border-top-left-radius: 5px;
+                border-right: none;
+            }
+            
+            &:last-child {
+                border-top-right-radius: 5px;
+                border-left: none;
+            }
+
+            &:hover {
+                color: rgb(82, 82, 82);
+                background-color: rgb(237, 237, 237);
+            }
+
+            &.active {
+                background: var(--buyRentActiveColor);
+                color: white;
+                
+                &.default {
+                    background: black;
+                }
+            }
+
+        }
+    } 
+    .form {
+        border: 1px solid var(--btnBorderColor);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        background-color: white;
+        height: 3rem;
+        gap: 0.3rem;
+
+        @include md {
+            width: max-content; 
+        }
+
+        @include sm {
+            width: 100%;
+            max-width: 100%;
+            flex-direction: column;
+            border: none;
+        }
+
+        input {
+            border: none;
+            padding: 0 0.8rem;
+            width: 12rem; 
+            text-transform: capitalize;
+
+            @include lg {
+                width: 9rem;
+            }
+
+            @include md {
+                flex: 1;
+            }
+
+            @include sm {
+                width: 100%;
+                padding: 0.8rem;
+                border: 1px solid var(--btnBorderColor)
+            }
+
+        }
+
+        a {
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+        button {
+            height: inherit;
+            padding: 0 1.6rem;
+            cursor: pointer;
+            border: none;
+            background-color: var(--btnBcgColor);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: white;
+            transition: var(--linksTransition);
+
+            @include md {
+                padding: 0 1.4rem;
+            }
+
+            @include sm {
+                align-self: flex-start;
+                // align-self: center;
+                width: 100%;
+                min-width: 11.5rem;
+                padding: 1rem;
+            }
+
+            &:hover {
+                color:var(--linkHoverColor);
+            }
+        }
+    }
+}

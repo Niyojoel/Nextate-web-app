@@ -1,0 +1,213 @@
+@import "../../scss/responsive.scss";
+@import "../../scss/variables.scss";
+@import "../../scss/globals.scss";
+@import "../../scss/formPage.scss";
+
+.desc {
+    margin: 1rem 0;
+}
+
+.input {
+    &.distances {
+        align-items: flex-start;
+
+        @include lg {
+            flex-direction: column;
+        }
+
+        .firstrow {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+
+            .restrictInput {
+                width: 100%;
+                min-width: 3rem;
+            }
+        }
+    }
+
+
+    .span {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        font-size: 0.95rem;
+
+        @include lg {
+            min-width: 7.3rem;
+        }
+
+
+        &.flexThree {
+            flex: 3;
+
+        }
+
+        &.flexTwo {
+            flex: 2;
+
+            @include lg {
+                min-width: 7.3rem;
+            }
+        }
+
+        &.coordinate {
+            width: 7.5rem;
+            margin-left: 1rem;
+        }
+
+        .cropLabel {
+            width: 100%;
+            overflow: hidden;
+            text-wrap: nowrap;
+            text-overflow: ellipsis;
+        }
+
+
+        input,
+        select,
+        textarea {
+            padding: 0.8rem;
+            background-color: var(--neutralLightColor);
+            border: none;
+            outline: none;
+
+            &:focus {
+                background-color: white;
+                border: 1px solid black;
+            }
+        }
+
+        textarea {
+            background-color: var(--neutralFaintColor);
+        }
+    }
+}
+
+
+.featuredImgs {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem; 
+    height: 100%;   
+    
+    @include md {
+        gap: 1rem;
+        display: flex;
+    }
+    
+    .imgsHeader {
+        color: var(--mediumGreyColor);
+        
+        @include md {
+            margin-top: 4rem;
+            align-self: flex-start;
+        }
+    }
+
+    //Particular to add post
+    .imagesBox {
+        max-height: 80%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center; 
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1rem 0;
+        overflow-y: auto;
+        
+        @include md {
+            background-color: var(--neutralFaintColor);
+            border-top: 1px solid var(--neutralLightColor);
+            border-bottom: 1px solid var(--neutralLightColor);
+            padding: 1rem 0;
+        }
+
+        @include sm {
+            flex-direction: column;
+        }
+
+        .topImgSm {
+            width: 80%;
+            height: max-content;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            
+            @include md {
+                flex-direction: row;
+                width: 80%;
+            }
+            
+            @include sm {
+                width: 100%;
+            }
+            
+            span {
+                width: 47%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-width: 10rem;
+                min-height: 8.5rem;
+                height: 50%;
+                border-radius: 3px;
+                background-color: white;
+
+                @include md {
+                    height: 10rem;
+                }
+                
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}
+
+.btnBox {
+    display: none;
+    width: 100%;
+    padding: 2rem 0;
+    background-color: white;
+
+    @include md {
+        display: flex;
+        justify-content: center;
+    }
+
+    .addBtnMd {
+        width: 100%;
+        color: white;
+        font-size: 0.9rem;
+        align-self: start;
+        padding: 1rem 1rem;
+        background-color: var(--cardOverlayColor);
+        transition: var(--linksTransition);
+        cursor: pointer;
+
+        &:hover {
+            background-color: var(--buyRentActiveColor);
+            color: var(--mediumGreyColor);
+        }
+
+        &:focus {
+            background-color: var(--cardOverlayColor);
+        }
+    }
+}  

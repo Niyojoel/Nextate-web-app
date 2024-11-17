@@ -1,0 +1,41 @@
+@import "../../scss/variables.scss";
+
+.alert {
+    position: absolute;
+    top: 0;
+    left: 40%;
+    align-self: center;
+    width: max-content;
+    visibility: hidden;
+    z-index: 5;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: var(--linksTransition);
+
+    &.show {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    p {
+        width: max-content;
+        height: 2.5rem;
+        padding: 0;
+        place-content: center;
+        border-radius: 0 0 0.2rem 0.2rem;
+        font-size: 0.95rem;
+        transform: all 0.3s ease;
+        color: white;
+
+        &.green {
+            padding: 0 0.8rem;
+            background-color: rgb(66, 209, 66);
+        }
+
+        &.red {
+            padding: 0 0.8rem;
+            background-color: var(--redTouchColor);
+        }
+    }
+}

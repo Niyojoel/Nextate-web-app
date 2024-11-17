@@ -1,0 +1,27 @@
+@import "./responsive.scss";
+
+:root {
+    --pageRightBcgColor: #fcf5f3;
+    --btnBcgColor: #fece51;
+    --btnBcgLightColor: #ffdc85;
+    --btnBcgGoldColor: #fece51;
+    --redTouchColor: rgb(255, 77, 77);
+    --lightRedColor: rgb(255, 230, 230);
+    --linksTransition: all 0.4s ease-out;
+    --darkGreyColor: rgb(27, 27, 27);
+    --mediumGreyColor: rgb(59, 59, 59);
+    --fontGreyColor: rgb(102, 102, 102);
+    --linkHoverColor: rgb(122, 122, 122);
+    --btnBorderColor: rgb(153, 153, 153);
+    --neutralGreyColor: rgb(194, 194, 194);
+    --neutralLightColor: rgb(224, 224, 224);
+    --neutralLighterColor: rgb(234, 234, 234);
+    --neutralFaintColor: rgba(242, 242, 242, 0.6);
+    --buyRentActiveColor: rgb(180, 193, 208);
+    --footerColor: rgba(180, 193, 208, 0.3);
+    --cardImgOverlay: rgba(32, 52, 74, 0.5);
+    --cardNewOverlay: rgb(22, 63, 107);
+    --cardOverlayColor: #305882;
+    --bannerTitleColor: rgb(22, 22, 22);
+}
+

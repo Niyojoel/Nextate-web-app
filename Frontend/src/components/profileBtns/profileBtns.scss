@@ -1,0 +1,80 @@
+@import "../../scss/responsive.scss";
+@import "../../scss/variables.scss";
+@import "../../scss/globals.scss";
+
+.profilebtns {
+
+    .profileDropdown {
+        width: 2rem;
+        height: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--linksTransition);
+
+        &.unfold {
+            border-bottom-left-radius: 0 !important;
+            border-bottom-right-radius: 0 !important;
+        }
+
+        .icon {
+            transition: all 0.2s ease-in;
+
+            &.activeIcon {
+                transform: rotate(180deg);
+            }
+        } 
+    }
+
+    .profileBtnsContainer {
+        position: absolute;
+        top: 2.1rem;
+        right: 1rem;
+        height: 0;
+        overflow: hidden;
+        width: max-content;
+        transition: var(--linksTransition);
+
+        &.activeDrop {
+            height: calc(2.2rem * 3);
+        }
+
+        .prof_btns {
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            background-color: var(--neutralLightColor);
+            
+            li, a {
+                height: 2.2rem;
+                width: 10rem;
+                list-style-type: none;
+                text-wrap: nowrap;
+                border-bottom: 1px solid grey;
+                place-content: center;
+                
+                &:last-child {
+                    border-bottom: none;
+                }
+                
+                .dropdown-btn {
+                    cursor: pointer;
+                    width: 100%;
+                    color: var(--fontGreyColor);
+                    height: 100%;
+                    text-align: start;
+                    padding: 0.3rem;
+                    padding-left: 1rem;
+                    background-color: var(--neutralLightColor);
+                    transform: var(--linksTransition);
+                    
+                    &:hover {
+                        transform: scale(1.01);
+                        background-color: var(--btnBcgColor); 
+                        color: var(--mediumGreyColor);
+                    }
+                }
+            }
+        }
+    }
+}

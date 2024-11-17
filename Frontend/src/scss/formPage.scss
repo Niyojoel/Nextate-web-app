@@ -1,0 +1,286 @@
+@import "./responsive.scss";
+@import "./variables.scss";
+@import "./globals.scss";
+
+.container {
+    .mainForm {
+        display: flex;
+        width: 100%;
+
+        @include md {
+            flex-direction: column;
+        }
+    }
+
+    .left {
+        &.spanMajority {
+            @include md {
+                flex: 1;
+            }
+        }
+        .wrapper {
+            &.jc {
+                position: relative;
+                align-items: center;
+                gap: 0;
+
+                @include md {
+                    height: 100%;
+                    align-items: start;
+                }
+             }
+
+            .connectform {
+                flex: 1;
+                width: 48%;
+                display: flex;
+                align-self: center;
+                flex-direction: column;
+                justify-content: center;
+                gap:  1.5rem;
+                margin-top: -2.5rem;
+
+                @include lg {
+                    width: 60%;
+                }
+
+                @include md {
+                    align-self: center; //to center forms
+                    width: 50%;
+                }
+
+                &.accRight {
+                    @include md {
+                        margin-top: 13rem;
+                    }
+                }
+
+                &.forUpdate {
+
+                    @include md {
+                        align-self: center;
+                    }
+                }
+                
+                @include sm {
+                    width: 55%;
+                }
+
+                @include xs {
+                    width: 80%;
+                }
+
+                //Particular to Add post
+                &.addPost {
+                    width: 100%;
+                    margin-top: 1rem;
+                }
+
+                h1 {
+                    align-self: flex-start;
+                    font-size: xx-large;
+                    text-transform: capitalize;
+                    text-align: left;
+                }
+
+                a {
+                    color: var(--fontGreyColor);
+                    font-size: 0.9rem;
+                    transition: var(--linksTransition);
+                    cursor: pointer;
+                    align-self: flex-start;
+
+                    &:hover {
+                        color: black;
+                    }
+                }
+
+                //For update forms link
+                .passChangeBtn {
+                    align-self: flex-start;
+
+                    span {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        color: var(--fontGreyColor);
+                        gap: 0.5rem;
+                        transition: var(--linksTransition);
+
+                        &:hover {
+                            color: black;
+                        }
+                    }
+                }
+
+                .loginform {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 0.8rem;
+                    flex-wrap: wrap;
+
+                    &.addPost2 {
+                        width: 100%;
+
+                        @include lg {
+                            width: 106%;
+                        }
+
+                        @include md {
+                            width: 100%;
+                        }
+                    }
+
+                    p {
+                        margin-top: 1rem;
+                        margin-bottom: 0.3rem;
+                        color: var(--mediumGreyColor);
+                    }
+
+                    .addBtn {
+                        margin-bottom: 2rem;
+
+                        @include md {
+                            display: none;
+                        }
+                    }
+
+                    .input {
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.8rem;
+                        font-size: 1rem;
+
+                        input,
+                        select {
+                            flex: 1;
+                            border: 1px solid var(--fontGreyColor);
+                            padding: 0.8rem 1rem;
+                            font-size: 0.9rem;
+                            transition: all 0.2s ease;
+
+                            &::placeholder {
+                                color: var(--btnBorderColor);
+                            }
+                        }
+
+                        .unmatch {
+                            background-color: var(--lightRedColor);
+                        }
+                    }
+
+                    button {
+                        width: 100%;
+                        color: white;
+                        font-size: 0.9rem;
+                        align-self: start;
+                        padding: 1rem 1rem;
+                        background-color: var(--cardOverlayColor);
+                        transition: var(--linksTransition);
+                        cursor: pointer;
+
+                        &.changeNotmade {
+                            background-color: var(--buyRentActiveColor);
+                        }
+
+                        &:hover {
+                            background-color: var(--buyRentActiveColor);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .right {
+        //Particular to Add post
+        &.redesign {
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            padding: 0;
+
+            @include md {
+                background-color: transparent;
+            }
+        }
+        
+
+        &.updateImg {
+            align-items: start;
+        }
+
+        .avatarBox {
+            width: 9rem;
+            height: 9rem;
+            border: none;
+            
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 0.3rem;
+            }
+        }
+
+        .uploadBtn {
+            color: white;
+            width: 9rem;
+            height: 2.6rem;
+            border-radius: 0.1rem;
+            font-size: 0.8rem;
+            font-weight: 100;
+            text-align: center;
+            text-wrap: nowrap;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // padding: 0.6rem 1rem;
+            background-color: var(--cardOverlayColor);
+            transition: var(--linksTransition);
+            cursor: pointer;
+            z-index: 1;
+
+            &.lgsc {
+                @include md {
+                    display: none;
+                }
+            }
+
+            &.fullOnRight {
+                width: 9rem;
+                justify-self: flex-end;
+
+                @include md {
+                    width: 9rem;
+                }
+            }
+
+            &:hover {
+                background-color: var(--buyRentActiveColor);
+                color: var(--mediumGreyColor);
+            }
+
+            &:focus {
+                background-color: var(--cardOverlayColor);
+            }
+
+            label {
+                width: 100%;
+                // padding: 1rem;
+                cursor: pointer;
+            }
+
+            input {
+                visibility: hidden;
+                opacity: 0;
+                width: 0;
+            }
+        }
+    }
+}

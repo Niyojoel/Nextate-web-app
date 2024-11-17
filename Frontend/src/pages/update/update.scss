@@ -1,0 +1,64 @@
+// @import "./responsive.scss";
+// @import "./globals.scss";
+@import "../../scss/variables.scss";
+@import "../../scss/formPage.scss";
+
+.updateTopBox {
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+    @include md {
+        margin-top: 2rem;
+        align-self: start;
+        background-color: white;
+        width: max-content;
+        gap: 0.8rem;
+    }
+
+    @include sm {
+        gap: 1rem;
+        width: 70%;
+    }
+
+    @include xs {
+        gap: 1rem;
+        width: 80%;
+    }
+
+
+    .secondSide {
+        width: max-content;
+        height: 100%;
+        display: flex;
+
+        @include md {
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+
+    .avatarBox {
+        width: 9rem;
+        height: 9rem;
+        border: 1px solid black;
+
+        @include md {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+}

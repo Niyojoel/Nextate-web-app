@@ -1,0 +1,79 @@
+@import "../../scss/variables.scss";
+
+.agentCard {
+    width: max-content;
+    min-width: 30rem;
+    display: flex;
+    gap: 2rem;
+    padding: 1rem;
+    overflow: hidden;
+    border-radius: 0.625rem;
+    background: var(--neutralLightColor);
+    transition: var(--linksTransition);
+
+    a {
+        align-self: flex-start;
+        transition: var(--linksTransition);
+
+        &:hover {
+            scale: 1.01;
+            transform: translateY(8%);
+            img {
+                border: 1px inset black;
+            }
+        }
+
+    }
+
+    .agentInfo {
+        flex: 1;
+        flex-direction: column;
+        display: flex;
+        gap: 1.5rem;
+
+        .agentInfo-top {
+            display: flex;
+            gap: 3rem;
+
+            .inforow {
+                display: flex;  
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+
+        .agentInfo-bottom {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 2rem;            
+            
+            .address {
+                &.address-agent {
+                    background-color: var(--neutralLighterColor);
+                    border: 1px solid var(--btnBorderColor);
+                    width: max-content;
+                    padding: 0.35rem 0.8rem;
+                    border-radius: 0.3rem;
+                    cursor: pointer;
+                    color: var(--fontGreyColor);
+                    transition: all 200ms ease-out;
+
+                    &:hover {
+                        color: var(--darkGreyColor);
+                        border: 1px solid var(--fontGreyColor);  
+                        transform: scale(0.99);
+                    }
+                }
+            }
+        }
+
+        .address{
+            &.address-agent {
+                display: flex;
+                align-items: center;
+                color: var(--darkGreyColor);
+            }
+        }
+    }
+}

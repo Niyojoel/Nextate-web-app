@@ -1,0 +1,32 @@
+@import "../../scss/responsive.scss";
+@import "../../scss/variables.scss";
+@import "../../scss/globals.scss";
+
+.container {
+    .left {
+        &.left-agents {
+            @include md {
+                align-items: start;
+            }
+        }
+        .wrapper {
+            .agents {
+                padding-top: 2rem;
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+                z-index: 10;
+
+                @include md {
+                    padding-top: 1rem;
+                    align-self: start;
+                }
+            }
+        }
+    }
+
+    .right {
+
+    }
+}
