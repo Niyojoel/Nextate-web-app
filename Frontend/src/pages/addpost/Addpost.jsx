@@ -43,7 +43,7 @@ const Addpost = () => {
   console.log(imgPrev)
 
   return (
-    <main className='container changeFlex'>
+    <section className='container changeFlex'>
       <form className= 'mainForm' onSubmit={processSubmit}>
         <div className={`left spanMajority ${expand ? 'profileLeft' : undefined}`}>
             <button className={`resizeLeft ${expand && 'adjust'}`} onClick={()=>setExpand(!expand)}>
@@ -214,7 +214,7 @@ const Addpost = () => {
             </div>
         </div>
       </form>
-    </main>
+    </section>
   )
 }
 
