@@ -55,13 +55,14 @@ const Update = () => {
   
   return (
     <section className='container reverseFlex homeWrapper'>
+     <form className='mainForm' onSubmit={processSubmit}>
       <div className="left spanMajority">
         <div className="wrapper jc">
           <figure className='banner'><img src='/imgedit.png' alt="" /></figure>
           {message && <Alert/>}
           <div className="connectform accRight">
               <h1>Update Profile</h1>
-              <form className='loginform' onSubmit={processSubmit}>
+              <div className='loginform'>
                   <div className="input">
                   <input type="text" id='username' name='username' defaultValue={user.username} placeholder='Username'  onChange={handleChange} autoFocus/>
                   </div>
@@ -71,8 +72,8 @@ const Update = () => {
                   <div className="input">
                   <input type="text" id='country' name='country' defaultValue={user.country} placeholder='Base country' onChange={handleChange}/>
                   </div>
-                  <button className={changeMade === false ? "changeNotmade" : undefined} disabled={isLoading}> {isLoading ? <FaSpinner/> : 'Submit'}</button>
-              </form>
+                  <button type= 'submit' className={changeMade === false ? "changeNotmade" : undefined} disabled={isLoading}> {isLoading ? <FaSpinner/> : 'Submit'}</button>
+              </div>
               <Link to="/profile/update/change-password" className='passChangeBtn'>
                   <span> Change password <FaAngleRight/></span>
               </Link>
@@ -95,6 +96,7 @@ const Update = () => {
           </div>
         </div>
       </div>
+     </form>
     </section>
   )
 }
