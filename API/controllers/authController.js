@@ -53,10 +53,8 @@ export const login = async (req, res) => {
   try {
     //Check if user exist
     const user = await User.findOne({ email }).select("+password");
-    const users = await User.find({});
 
     console.log(user);
-    console.log(users);
     if (!user) {
       return res.status(401).json({ message: "Invalid Credentials!" });
     }
