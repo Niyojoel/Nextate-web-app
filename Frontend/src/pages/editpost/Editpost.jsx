@@ -22,6 +22,7 @@ const Editpost = () => {
     };
 
   const processSubmit = async (e)=>{ 
+    console.log('editing initiated');
     try{
       const res = await handleSubmit(e, `/posts/${post._id}`, "patch");
       const data = await res.data;
@@ -60,6 +61,7 @@ const Editpost = () => {
 
   return (
     <section className='container changeFlex'>
+     <form className='mainForm' onSubmit={processSubmit}>
       <div className={`left spanMajority ${expand ? 'profileLeft' : undefined}`}>
         <button className={`resizeLeft ${expand && 'adjust'}`} onClick={()=>setExpand(!expand)}>
             {!expand && <i className='icon'><FaAngleRight/></i>}
@@ -69,7 +71,7 @@ const Editpost = () => {
           {message && <Alert/>}
           <div className="connectform addPost">
               <h1>Edit Post</h1>
-              <form className='loginform addPost2' onSubmit={processSubmit}>
+              <div className='loginform addPost2'>
                 <div className="input titleHead">
                     <span className='span'>
                         <label htmlFor="title">Title</label>
@@ -196,7 +198,7 @@ const Editpost = () => {
                 <button type= 'submit' className={changeMade === false ? "addBtn changeNotmade" : "addBtn"} disabled={isLoading}> 
                     {isLoading ? <FaSpinner/> : 'Edit Post'}
                 </button>
-              </form>
+              </div>
           </div>
         </div>
       </div>
@@ -227,6 +229,7 @@ const Editpost = () => {
                 </button>
             </div>
         </div>
+      </form>
     </section>
   )
 }
