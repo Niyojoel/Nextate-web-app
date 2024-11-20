@@ -67,9 +67,9 @@ export const login = async (req, res) => {
     }
     //Generate token and send
     const expiryTime = 1000 * 60 * 60 * 24 * (process.env.JWT_EXPIRY * 1);
-    console.log(expiryTime);
-    console.log(process.env.JWT_SECRET_KEY);
-    console.log(user.id)
+    console.log({expiry: expiryTime});
+    console.log({secretKey: process.env.JWT_SECRET_KEY});
+    console.log({user: user.id})
 
     const token = jwt.sign(
       {
