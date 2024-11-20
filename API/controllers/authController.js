@@ -82,7 +82,7 @@ export const login = async (req, res) => {
       .cookie("token", token, {
         httpOnly: true,
         maxAge: expiryTime, //one week expiry
-        secure: true//for production on a https connection mode
+        secure: true //for production on a https connection mode
       })
       .status(200)
       .json({ message: "Login successful", data: {...userInfo} });
