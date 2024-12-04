@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import "./SingleDetails.scss";
+import "./singleDetails.scss";
 import {Slider, Features, Map} from "../../components";
 import {FaBath,FaBorderAll, FaBus, FaPhone, FaRegBookmark, FaRegEdit, FaRegStar, FaShoppingCart, FaStar} from 'react-icons/fa';
 import {IoBedOutline, IoCashOutline, IoConstructOutline, IoPerson, IoRestaurant, IoSchool } from "react-icons/io5";

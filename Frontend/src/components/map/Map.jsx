@@ -7,11 +7,11 @@ import {Pin} from '../';
 const Map = ({locations}) => {
 
   let latsAggregate = 0;
-  locations.forEach((place)=> latsAggregate += Number(place.latitude));
+  locations?.forEach((place)=> latsAggregate += Number(place.latitude));
   const latsAverage = latsAggregate/locations.length;
 
   let longsAggregate = 0;
-  locations.forEach((place)=> longsAggregate += Number(place.longitude));
+  locations?.forEach((place)=> longsAggregate += Number(place.longitude));
   const longsAverage = longsAggregate/locations.length;
 
   const center = [parseFloat(latsAverage.toFixed(4)), parseFloat(longsAverage.toFixed(4))];
@@ -22,7 +22,7 @@ const Map = ({locations}) => {
     <MapContainer key= {position[0]} center={position} zoom={3} scrollWheelZoom={false} className='map'>
         <TileLayer attribution='<a href="https://www.openstreetmao.org/copyright"><a/>' url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {locations.map((el, i) => {
+        {locations?.map((el, i) => {
             return <Pin key={el.latitude + i} location={el}/>
         })}
     </MapContainer>

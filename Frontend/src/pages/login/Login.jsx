@@ -46,7 +46,7 @@ const Login = () => {
                 <div className="input">
                   <input type="password" id='password' name='password' placeholder='**********' min={8} max={30} required/>
                 </div>
-                <button disabled={isLoading}> {isLoading ? <FaSpinner/> : 'Login'}</button>
+                <button type="submit" disabled={isLoading}> {isLoading ? <FaSpinner/> : 'Login'}</button>
               </form>
               <Link to="/signup">Click here to create an account</Link>
           </div>

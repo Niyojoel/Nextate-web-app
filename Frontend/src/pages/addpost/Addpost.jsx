@@ -4,20 +4,16 @@ import { FaAngleLeft, FaAngleRight, FaSpinner } from 'react-icons/fa6';
 import {useGlobalContext} from '../../context/useContext';
 import { useNavigate, useResolvedPath } from 'react-router-dom';
 import { Alert, UploadWidget } from '../../components';
-{/*import {Editor} from "react-draft-wysiwyg";
-import "../../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css"*/}
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css"; 
 
 const Addpost = () => {
     const {setExpand, expand, isLoading, message, imgPrev, setImgPrev,  showAlert, handleSubmit, handleReadFile, updateLoading, getPath} = useGlobalContext();
     const navigate= useNavigate()
-    const [value, setValue] = useState('')
 
     const {pathname} = useResolvedPath()
     const path = pathname.split("/")[2]
 
   const processSubmit = async (e)=>{ 
+    console.log("about to submit")
     try{
       const res = await handleSubmit(e, '/posts', "post");
       const data = await res.data;
@@ -47,6 +43,7 @@ const Addpost = () => {
 
   return (
     <main className='container changeFlex'>
+        <form className='mainForm' onSubmit={processSubmit}>
         <div className={`left spanMajority ${expand ? 'profileLeft' : undefined}`}>
             <button className={`resizeLeft ${expand && 'adjust'}`} onClick={()=>setExpand(!expand)}>
                 {!expand && <i className='icon'><FaAngleRight/></i>}
@@ -56,7 +53,7 @@ const Addpost = () => {
             {message && <Alert/>}
             <div className="connectform addPost">
                 <h1>Add New Post</h1>
-                <form className='loginform addPost2' onSubmit={processSubmit}>
+                <div className='loginform addPost2'>
                     <div className="input titleHead">
                         <span className='span'>
                             <label htmlFor="title">Title</label>
@@ -181,10 +178,10 @@ const Addpost = () => {
                             </span>
                         </div>
                     </div>
-                    <button className='addBtn' disabled={isLoading}> 
+                    <button type="submit" className='addBtn' disabled={isLoading}> 
                         {isLoading ? <FaSpinner/> : 'Add Post'}
                     </button>
-                </form>
+                </div>
             </div>
             </div>
         </div>
@@ -210,11 +207,12 @@ const Addpost = () => {
                 }}/>
             </div>
             <div className="btnBox">
-                <button className='addBtnMd' disabled={isLoading}> 
+                <button type="submit"  className='addBtnMd' disabled={isLoading}> 
                     {isLoading ? <FaSpinner/> : 'Add'}
                 </button>
             </div>
         </div>
+        </form>
     </main>
   )
 }

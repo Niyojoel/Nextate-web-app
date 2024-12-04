@@ -58,6 +58,7 @@ export const AppProvider = ({children})=> {
         const formData = new FormData(e.target);
         let inputs;
         inputs = Object.fromEntries(formData);
+        
         console.log({...inputs})
 
         if(inputs.password && inputs.confirmPassword && inputs.password !== inputs.confirmPassword) {
