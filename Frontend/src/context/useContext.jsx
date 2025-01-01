@@ -65,6 +65,10 @@ export const AppProvider = ({children})=> {
             return setPassMatch("fail");
         }
 
+        if(path === "/profile/addpost" && !imgPrev.length) {
+            return showAlert("Post images required", 'fail');
+        }
+
         try {
             let res;
             if(method === "post") res = apiRequest.post(endPoint, {
