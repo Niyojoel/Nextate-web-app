@@ -65,7 +65,7 @@ export const AppProvider = ({children})=> {
             return setPassMatch("fail");
         }
 
-        if(path === "/profile/addpost" && !imgPrev.length) {
+        if(path === "addpost" && !imgPrev.length) {
             return showAlert("Post images required", 'fail');
         }
 
