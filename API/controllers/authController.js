@@ -75,8 +75,8 @@ export const login = async (req, res) => {
 
     const { password: userPassword, ...userInfo } = user._doc;
     console.log(token);
-    res
-      .cookie("token", token, {
+    
+    res.cookie("token", token, {
         httpOnly: true,
         maxAge: expiryTime, //one week expiry
         secure: true, //for production on a https connection mode
