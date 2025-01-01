@@ -147,11 +147,11 @@
             gap: 0.8rem;
             
             @include md {
-                flex-direction: row;
                 width: 80%;
             }
             
             @include sm {
+                flex-direction: column;
                 width: 100%;
             }
             
