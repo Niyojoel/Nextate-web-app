@@ -100,17 +100,20 @@ const SingleDetails = () => {
                     {postDetail.size || size}m sq area.
                   </div>
                 </div>
+                {(church || school || bus || mall || restaurant || gym) &&
                 <div className="partition col2">
                   <p className='heading'> Distances away (kms away) </p>
                   {postDist.map((el, i)=> {
-                    return (
+                    if (el) return (
                      <div className="address dist" key={uuidv4()}>
                       <i className='icon'>{distAwayIcons[i]}</i>
                       {places[i]} : {el?.toString().length >= 4 ? `${el/1000} km` : `${el} m`}
                     </div>
-                    )
+                    );
+                    return;
                   })}
                 </div>
+                }
                 <div className="partition col3">
                   <div className="user">
                     <p className='heading'> Agent's info</p>
@@ -192,7 +195,8 @@ const SingleDetails = () => {
               </div>
             </div>
           </div>
-          <div className="rightrow">           
+          {(church || school || bus || mall || restaurant || gym) &&
+          <div className="rightrow">
             <p className='title'>Nearby Facilities</p>
             <div className="listHorizontal nearby">
               {postDist.sort((a, b)=> a - b).slice(0, 3).map((el, i)=> {
@@ -208,6 +212,7 @@ const SingleDetails = () => {
               })}
             </div>
           </div>
+          }
           <div className="rightrow">
             <p className='title'>Location</p>
             <div className="mapContainer">
