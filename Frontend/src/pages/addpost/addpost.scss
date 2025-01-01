@@ -194,7 +194,7 @@
     }
 
     .addBtnMd {
-        width: 100%;
+        width: 40%;
         color: white;
         font-size: 0.9rem;
         align-self: start;
@@ -218,3 +218,24 @@
         }
     }
 }  
+
+.uploadPhotosBtn {
+    position: absolute;
+    bottom: 7%;
+    right: 8.3%;
+    background-color: var(--cardOverlayColor);
+    width: 11rem;
+    padding: 0.8rem;
+    border-radius: 3px;
+    text-align: center;
+    
+    &:hover {
+       background-color: var(--buyRentActiveColor);
+    }
+
+    @include md {
+       right: 50%;
+       bottom: 7%;
+       transform: translateX(50%);
+    }
+}
