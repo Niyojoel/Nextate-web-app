@@ -182,13 +182,15 @@
 
 .btnBox {
     display: none;
-    width: 100%;
-    padding: 2rem 0;
-    background-color: white;
+    pointer-events: none;
 
     @include md {
         display: flex;
+        width: 100%;
+        padding: 2rem 0;
+        background-color: white;
         justify-content: center;
+        pointer-events: all;
     }
 
     .addBtnMd {
