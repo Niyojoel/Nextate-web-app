@@ -182,14 +182,14 @@
 
 .btnBox {
     display: none;
+    background-color: white;
+    justify-content: center;
     pointer-events: none;
 
     @include md {
         display: flex;
         width: 100%;
         padding: 2rem 0;
-        background-color: white;
-        justify-content: center;
         pointer-events: all;
     }
 
@@ -202,6 +202,7 @@
         background-color: var(--cardOverlayColor);
         transition: var(--linksTransition);
         cursor: pointer;
+        pointer-events: none;
 
         &:hover {
             background-color: var(--buyRentActiveColor);
@@ -210,6 +211,10 @@
 
         &:focus {
             background-color: var(--cardOverlayColor);
+        }
+
+        @include md {
+            pointer-events: all;
         }
     }
 }  
