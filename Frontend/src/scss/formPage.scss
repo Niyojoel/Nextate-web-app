@@ -3,6 +3,8 @@
 @import "./globals.scss";
 
 .container {
+    position: relative;
+    
     .mainForm {
         display: flex;
         width: 100%;
