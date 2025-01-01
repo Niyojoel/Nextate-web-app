@@ -215,13 +215,6 @@ const Editpost = () => {
                         <span>{imgPrev[3] && <img src={imgPrev[3]} alt="" />}</span>
                     </div>
                 </figure>
-                <UploadWidget uwConfig={{
-                    cloudName : "JoelNiyo",
-                    uploadPreset: "Nextate",
-                    multiple: true,
-                    maxImageFileSize: 2000000,
-                    folder: "posts"
-                }}/>
             </div>
             <div className="btnBox">
                 <button type= 'submit' className='addBtnMd' disabled={isLoading}> 
@@ -230,6 +223,15 @@ const Editpost = () => {
             </div>
         </div>
       </form>
+      <div className="uploadPhotoBtn">
+         <UploadWidget uwConfig={{
+            cloudName : "JoelNiyo",
+            uploadPreset: "Nextate",
+            multiple: true,
+            maxImageFileSize: 2000000,
+            folder: "posts"
+         }}/>
+      </div>
     </section>
   )
 }
