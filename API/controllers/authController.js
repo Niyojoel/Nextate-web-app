@@ -48,13 +48,10 @@ export const signup = async (req, res) => {
 export const login = async (req, res) => {
   const { email, password } = req.body;
 
-  console.log(req.body);
-
   try {
     //Check if user exist
     const user = await User.findOne({ email }).select("+password");
 
-    console.log(user);
     if (!user) {
       return res.status(401).json({ message: "Invalid Credentials!" });
     }
@@ -82,7 +79,7 @@ export const login = async (req, res) => {
       .cookie("token", token, {
         httpOnly: true,
         maxAge: expiryTime, //one week expiry
-        secure: true //for production on a https connection mode
+        // secure: true //for production on a https connection mode
       })
       .status(200)
       .json({ message: "Login successful", data: {...userInfo} });
