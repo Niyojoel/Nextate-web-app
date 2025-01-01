@@ -141,9 +141,11 @@
 
                     .addBtn {
                         margin-bottom: 2rem;
+                        pointer-events: all;
 
                         @include md {
                             display: none;
+                            pointer-events: none;
                         }
                     }
 
