@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <section className='container homeWrapper'>
         <div className="left">
-          <div className='wrapper'>
+          <div className='wrapper homeWrap'>
             <figure className='banner'><img src='./imgedit.png' alt="" /></figure>
             <div className="bannerText">
               <h1 className='title'>Find Real Estate,<br/> Get The Place of Your Dream </h1>
