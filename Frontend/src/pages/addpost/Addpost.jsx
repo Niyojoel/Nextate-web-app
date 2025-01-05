@@ -66,7 +66,7 @@ const Addpost = () => {
                             <label htmlFor="address">Address</label>
                             <input type="text" id='address' name= "address" required/>
                         </span>
-                        <span className='span coordinate'>
+                        <span className='span coordinate hideonxs'>
                             <label htmlFor="latitude">Latitude</label>
                             <input type="text" id='latitude' name='latitude' placeholder='-12.5823' required/>
                         </span>
@@ -79,6 +79,10 @@ const Addpost = () => {
                         <span className='span flexTwo'>
                             <label htmlFor="country">Country</label>
                             <input type="text" id='country' name='country' required/>
+                        </span>
+                        <span className='span coordinate showonxs'>
+                            <label htmlFor="latitude">Latitude</label>
+                            <input type="text" id='latitude' name='latitude' placeholder='-12.5823' required/>
                         </span>
                         <span className='span coordinate'>
                             <label htmlFor="longitude">Longitude</label>
