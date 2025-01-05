@@ -47,15 +47,25 @@ const ProfileBtns = ({handleLogout}) => {
                 <button className='dropdown-btn' onClick={() => {
                    showBtnsDrop;
                    handleLogout;
-                 }>
+                 }}>
                   Logout
                 </button>
               </li>
               <li>
-                <button className='dropdown-btn' onClick={()=>{showBtnsDrop; navigate("/profile/update")}>Update Profile</button>
+                <button className='dropdown-btn' onClick={()=>{
+                  showBtnsDrop; 
+                  navigate("/profile/update");
+                }}>
+                  Update Profile
+                </button>
               </li>
               <li>
-                <button className='dropdown-btn' onClick={()=> {handleDelete; showBtnsDrop}}>Delete account</button>
+                <button className='dropdown-btn' onClick={()=> {
+                  handleDelete; 
+                  showBtnsDrop;
+                 }}>
+                  Delete account
+                </button>
               </li>
           </ul>
         </div>
