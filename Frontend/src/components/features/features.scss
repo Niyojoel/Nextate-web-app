@@ -16,6 +16,7 @@
         background-color: var(--neutralLighterColor);
         display: flex;
         align-items: center;
+        flex-wrap: nowrap;
         gap: 0.35rem;
         padding: 0.35rem;
         border-radius: 0.25rem;
