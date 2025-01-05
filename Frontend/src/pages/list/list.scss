@@ -62,6 +62,7 @@
             height: 100%;
 
             @include md{
+                padding: 0;
                 height: calc(100vh - 5rem);
             }
             // padding-bottom: 1rem;
