@@ -51,9 +51,9 @@ const ProfileBtns = ({handleLogout}) => {
                   Logout
                 </button>
               </li>
-              <Link to="/profile/update">
-                <button className='dropdown-btn' onClick={showBtnsDrop}>Update Profile</button>
-              </Link>
+              <li>
+                <button className='dropdown-btn' onClick={()=>{showBtnsDrop; navigate("/profile/update")}>Update Profile</button>
+              </li>
               <li>
                 <button className='dropdown-btn' onClick={()=> {handleDelete; showBtnsDrop}}>Delete account</button>
               </li>
