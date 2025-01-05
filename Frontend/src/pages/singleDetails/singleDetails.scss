@@ -157,9 +157,9 @@
         @include md {
             height: calc(100vh - 5rem);
             width: 100%;
-            padding: 1rem;
         }
 
+        
         .rightfeatures {
             height: 100%;
             width: 100%;
@@ -167,6 +167,10 @@
             padding: 0 1rem;
             flex-direction: column;
             gap: 1rem;
+
+            @include md {
+               padding: 0;
+            }
 
             .rightrow {
                 display: flex;
@@ -187,6 +191,7 @@
                 p {
                     font-size: 0.88rem;
                     color: black;
+                    text-wrap: nowrap;
                 }
                 
                 i {
@@ -199,11 +204,13 @@
                     font-weight: 600;
                     color: rgb(35, 35, 35);
                     text-transform: capitalize;
+                    text-wrap: nowrap;
                 }
     
                 .feature {
                     display: flex;
                     gap: 0.5rem;    
+                    flex-wrap: nowrap;
                     
                     .resize {
                         border: 1px solid var(--cardOverlayColor);
@@ -224,13 +231,32 @@
                     flex-direction: column;
                     gap: 1rem;
                     border-radius: 0.3rem;
-                    padding: 0.7rem;    
+                    padding: 0.7rem; 
+
+                    @include md {
+                       flex-direction: row;
+                       flex-wrap: wrap;
+                       gap: 3rem;
+                    }
+
+                    @include sm {
+                       gap: 1rem;
+                    }
                 }
     
                 .listHorizontal {
                     display: flex;
                     justify-content: space-between;
                     gap: 1rem;
+
+                    @include md {
+                       justify-content: start;
+                       gap: 3rem;
+                    }
+
+                    @include sm {
+                       gap: 1rem;
+                    }
 
                     &.nearby {
                         background: white;
@@ -262,6 +288,12 @@
                 .buttons {
                     display: flex;
                     justify-content: space-between;
+                    gap: 0.35rem;
+                    flex-wrap: wrap;
+
+                    @include sm {
+                        justify-content: center;
+                    }
                     
                     button {
                         background-color: white;
@@ -270,6 +302,7 @@
                         border: 1px solid var(--cardOverlayColor);
                         cursor: pointer;
                         display: flex;
+                        flex-wrap: no-wrap;
                         color: var(--mediumGreyColor);
                         align-items: center;
                         gap: 0.5rem;
