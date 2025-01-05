@@ -61,11 +61,13 @@
                             .partition {
 
                                 &.col1 {
-                                    min-width: 28%;
+                                    min-width: 250px;
+                                    width: 28%;
                                 }
 
                                 &.col2 {
-                                    min-width: 32%;
+                                    min-width: 250px;
+                                    width: 32%;
                                     .address {
                                         &.dist {
                                             line-height: 1.2;
@@ -96,7 +98,11 @@
                                             overflow: hidden;
                                             border-radius: 0.625rem;
                                             background: var(--buyRentActiveColor);
-                                
+
+                                            @include sm {
+                                                flex-direction: column;
+                                                align-items: start;
+                                            }
                                             .agent {
                                                 flex: 1;
                                                 display: flex;
@@ -127,6 +133,7 @@
                                 .address {
                                     color: black;
                                     font-size: 0.9rem;
+                                    text-wrap: nowrap;
                                 }
 
                             }
@@ -138,6 +145,7 @@
                             font-size: 0.9rem;
                             font-weight: 650;
                             margin-bottom: 0.3rem;
+                            text-wrap: wrap;
                         }
                         .desc {
                             display: flex;
