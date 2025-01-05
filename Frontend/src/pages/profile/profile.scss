@@ -104,6 +104,10 @@
                         padding-bottom: 1rem;
                         gap: 3rem;
 
+                        @include sm {
+                            flex-direction: column;
+                        }
+
                         @include lg {
                             gap: 2rem;
                         }
