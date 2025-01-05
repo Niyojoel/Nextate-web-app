@@ -6,6 +6,14 @@
 .container {
     .left {
         .wrapper {
+            &.homeWrap {
+                @imclude xs {
+                    padding-top: 3rem;
+                }
+                @include sm {
+                    height: auto;
+                }
+            }
             .banner {
                 position: absolute;
                 display: none;
