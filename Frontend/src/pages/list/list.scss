@@ -51,6 +51,10 @@
                     gap: 1.5rem;
                     padding-right: 0.5rem;
                     overflow-y: auto;
+
+                    @imclude md {
+                       padding-right: 0; 
+                    }
                 }
             }
         }
