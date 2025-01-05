@@ -104,14 +104,14 @@
                         padding-bottom: 1rem;
                         gap: 3rem;
 
-                        @include sm {
-                            flex-direction: column;
-                        }
-
                         @include lg {
                             gap: 2rem;
                         }
 
+                        @include xs {
+                            flex-direction: column;
+                            align-items: start;
+                        }
 
                         .row1 {
                             &.row1-profile {
@@ -119,6 +119,11 @@
                                 width: max-content;
                                 justify-content: start;
                                 gap: 0.65rem;
+                                flex-wrap: wrap;
+
+                                @include xs {
+                                    flex-direction: column;
+                                }
                                 // flex-direction: column;
                             }
 
@@ -132,8 +137,8 @@
 
                                     p {
                                         color: var(--fontGreyColor);
-                                        font-size: 0.91rem;
-                                        letter-spacing: 1px;
+                                        font-size: 0.9rem;
+                                        font-stretch: expanded;
                                         line-height: 1;
 
                                         span {
