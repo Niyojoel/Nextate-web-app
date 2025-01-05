@@ -32,7 +32,7 @@ const ProfileBtns = ({handleLogout}) => {
     }
   }
 
-  const showBtnsDrop = (e)=> {
+  const showBtnsDrop = ()=> {
     dropDownref.current.classList.toggle("activeDrop");
     dropIcon.current.classList.toggle('activeIcon');
     dropDownToggleRef.current.classList.toggle("unfold");
@@ -44,13 +44,18 @@ const ProfileBtns = ({handleLogout}) => {
         <div className= "profileBtnsContainer" ref={dropDownref}>
           <ul className='prof_btns'>
               <li>
-                <button className='dropdown-btn' onClick={handleLogout}>Logout</button>
+                <button className='dropdown-btn' onClick={() => {
+                   showBtnsDrop;
+                   handleLogout;
+                 }>
+                  Logout
+                </button>
               </li>
               <Link to="/profile/update">
-                <button className='dropdown-btn'>Update Profile</button>
+                <button className='dropdown-btn' onClick={showBtnsDrop}>Update Profile</button>
               </Link>
               <li>
-                <button className='dropdown-btn' onClick={handleDelete}>Delete account</button>
+                <button className='dropdown-btn' onClick={()=> {handleDelete; showBtnsDrop}}>Delete account</button>
               </li>
           </ul>
         </div>
