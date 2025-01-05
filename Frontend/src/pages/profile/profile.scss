@@ -189,6 +189,10 @@
             @include md {
                 padding-top: 2rem;
             }
+
+            @include md {
+                padding: 0;
+            }
         }
     }
 
