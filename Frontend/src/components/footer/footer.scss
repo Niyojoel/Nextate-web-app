@@ -21,17 +21,18 @@
     }
 
     &.bcgNone {
-        display: block;
+        display: flex;
+        flex-wrap: wrap;
         border-top: none;
         background: transparent;
         margin-top: auto;
 
         @include md {
-            display: none;
+            visibility: hidden;
         }
 
         @include xs {
-            display: block;
+            visibility: visible;
         }
     } 
 
