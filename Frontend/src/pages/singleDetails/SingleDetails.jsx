@@ -241,11 +241,11 @@ const SingleDetails = () => {
                 <button type='button' onClick={handleSave}>
                   {saved ? 
                     <><i><FaBookmark/></i> Saved</>
-                    :<><i><FaRegBookmark/></i> Save the Place</>}
+                    :<><i><FaRegBookmark/></i> Save </>}
                 </button>
                 <button onClick={()=>handleSendMessage(post.user._id)}>
                   <i><FaRegMessage/></i>
-                  Send Message
+                  Message
                 </button>
               </div>
             }
