@@ -76,8 +76,8 @@ const Filter = () => {
           <label htmlFor="bedroom">Bedroom(s)</label>
           <input type="number" id='bedroom' name='bedroom' defaultValue={query.bedroom} placeholder='Any' onChange={handleChange} ref={bedroomRef}/>
         </div>
-        <button onClick={handleFilter}> <i> <FaSearch/> </i></button>
       </div>
+      <button onClick={handleFilter}> <i> <FaSearch/> </i></button>
     </search>
   )
 }
