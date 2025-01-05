@@ -57,6 +57,26 @@
         &.coordinate {
             width: 7.5rem;
             margin-left: 1rem;
+
+            @include xs {
+                margin-left: 0;
+                width: max-content;
+                flex: 1;
+            }
+        }
+
+        &.hideonxs {
+            @include xs{
+               display: none;
+            }
+        }
+
+        &.showonxs {
+            display: none
+
+            @include xs{
+               display: flex;
+            }
         }
 
         .cropLabel {
