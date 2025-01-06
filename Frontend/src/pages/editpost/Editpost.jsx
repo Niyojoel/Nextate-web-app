@@ -142,10 +142,6 @@ const Editpost = () => {
                         <input onChange={handleChange}type="number" id='bathroom' name='bathroom'  defaultValue={post.bathroom} min={0}/>
                     </span>
                     <span className='span showonxs'>
-                        <label htmlFor="income">Income Policy</label>
-                        <input onChange={handleChange}type="text" name="income" id="income"  defaultValue={postDetail.income} placeholder='Income requirement'/>
-                    </span>
-                    <span className='span showonxs'>
                         <label htmlFor="utilities" className='cropLabel'>Utilities Responsibility</label>
                         <select name="utilities" id="utilities" defaultValue={postDetail.utilities}>
                             <option value="owner">Owner's</option>
@@ -158,6 +154,10 @@ const Editpost = () => {
                             <option value="allowed">Allowed</option>
                             <option value="not allowed">Not allowed</option>
                         </select>
+                    </span>
+                    <span className='span showonxs'>
+                        <label htmlFor="income">Income Policy</label>
+                        <input onChange={handleChange}type="text" name="income" id="income"  defaultValue={postDetail.income} placeholder='Income requirement'/>
                     </span>
                 </div>
                 <div className="input size hidexs">
