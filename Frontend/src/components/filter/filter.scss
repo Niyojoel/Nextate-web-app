@@ -22,7 +22,7 @@
         flex-direction: column;
         gap: 0.5rem;
 
-        @include {
+        @include xs {
             gap: 0.3rem;
         }
 
