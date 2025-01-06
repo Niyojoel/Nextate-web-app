@@ -193,7 +193,7 @@ const Addpost = () => {
                                 <label htmlFor="bus"> Bus Station</label>
                                 <input type="number" name="bus" id="bus" min={0} placeholder='50m' className='restrictInput'/>
                             </span>
-                            <span className='span'>
+                            <span className='span hideonxs'>
                                 <label htmlFor="restaurant">Restaurant</label>
                                 <input type="number" name="restaurant" id="restaurant" min={0} placeholder='100m' className='restrictInput'/>
                             </span>
@@ -206,6 +206,16 @@ const Addpost = () => {
                             <span className='span'>
                                 <label htmlFor="church">Church</label>
                                 <input type="number" name="church" id="church" min={0} placeholder='500m' className='restrictInput'/>
+                            </span>
+                            <span className='span hideonxs'>
+                                <label htmlFor="gym">Gym</label>
+                                <input type="number" name="gym" id="gym" min={0} placeholder='230m' className='restrictInput'/>
+                            </span>
+                        </div>
+                        <div className="firstrow showonxs">
+                            <span className='span'>
+                                <label htmlFor="restaurant">Restaurant</label>
+                                <input type="number" name="restaurant" id="restaurant" min={0} placeholder='100m' className='restrictInput'/>
                             </span>
                             <span className='span'>
                                 <label htmlFor="gym">Gym</label>
