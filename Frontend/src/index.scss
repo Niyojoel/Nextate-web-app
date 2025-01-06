@@ -1,5 +1,5 @@
 html: {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 *, *::before, *::after {
@@ -44,11 +44,4 @@ button:hover, button:focus {
 ::-webkit-scrollbar {
     appearance: none;
 }
-
-@media (max-width: 720px) {
-    html: {
-       font-size: 16px;
-    }
-}
-
 
