@@ -1,3 +1,4 @@
+
 @import "../../scss/responsive.scss";
 @import "../../scss/variables.scss";
 
@@ -101,9 +102,7 @@
         overflow: hidden;
 
         @include xs{
-           height: 300px;
            width: 100%;
-           overflow: visible;
         }
     }
     
@@ -116,6 +115,7 @@
         gap: 0.8rem;
 
         @include xs{
+           height: 27%;
            gap: 0.3rem;
            flex-direction: row;
            width: 100%;
@@ -123,11 +123,12 @@
         
         img {
             border-radius: 0.625rem;
-            height: 30%;
+            //height: 30%;
 
             @include xs{
                 width: 33%;
-                height: auto;
+                height: 100%;
+                object-fit: cover;
             }
         }
     }
