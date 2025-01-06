@@ -129,8 +129,38 @@ const Editpost = () => {
                         <label htmlFor="price">Price</label>
                         <input onChange={handleChange} type="number" id='price' name='price'  defaultValue={post.price} required/>
                     </span>
+                    <span className='span showonxs'>
+                        <label htmlFor="size">Total size (sqft)</label>
+                        <input onChange={handleChange} type="number" name="size" id="size" min={0} defaultValue={postDetail.size} placeholder='1200'/>
+                    </span>
+                    <span className='span showonxs'>
+                        <label htmlFor="bedroom">Bedrooms</label>
+                        <input onChange={handleChange}type="number" id='bedroom' name='bedroom' min={0}  defaultValue={post.bedroom} required/>
+                    </span>
+                    <span className='span showonxs'>
+                        <label htmlFor="bathroom">Bathrooms</label>
+                        <input onChange={handleChange}type="number" id='bathroom' name='bathroom'  defaultValue={post.bathroom} min={0}/>
+                    </span>
+                    <span className='span showonxs'>
+                        <label htmlFor="income">Income Policy</label>
+                        <input onChange={handleChange}type="text" name="income" id="income"  defaultValue={postDetail.income} placeholder='Income requirement'/>
+                    </span>
+                    <span className='span showonxs'>
+                        <label htmlFor="utilities" className='cropLabel'>Utilities Responsibility</label>
+                        <select name="utilities" id="utilities" defaultValue={postDetail.utilities}>
+                            <option value="owner">Owner's</option>
+                            <option value="tenant">Tenant's</option>
+                        </select>
+                    </span>
+                    <span className='span showonxs'>
+                        <label htmlFor="pets">Pets Policy</label>
+                        <select name="pets" id="pets" defaultValue={postDetail.pet}>
+                            <option value="allowed">Allowed</option>
+                            <option value="not allowed">Not allowed</option>
+                        </select>
+                    </span>
                 </div>
-                <div className="input size">
+                <div className="input size hidexs">
                    <span className='span'>
                         <label htmlFor="size">Total size (sqft)</label>
                         <input onChange={handleChange} type="number" name="size" id="size" min={0} defaultValue={postDetail.size} placeholder='1200'/>
@@ -144,7 +174,7 @@ const Editpost = () => {
                         <input onChange={handleChange}type="number" id='bathroom' name='bathroom'  defaultValue={post.bathroom} min={0}/>
                     </span>
                 </div>
-                <div className="input policy">
+                <div className="input policy hidexs">
                     <span className='span'>
                         <label htmlFor="income">Income Policy</label>
                         <input onChange={handleChange}type="text" name="income" id="income"  defaultValue={postDetail.income} placeholder='Income requirement'/>
