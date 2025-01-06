@@ -17,8 +17,7 @@
     z-index: 5;
 
     @include xs {
-        flex-wrap: wrap;
-        justify-content: center;
+       display: none;
     }
 
     &.bcgNone {
