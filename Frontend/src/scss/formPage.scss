@@ -158,6 +158,25 @@
                         gap: 0.8rem;
                         font-size: 1rem;
 
+                        @include xs {
+                            flex-wrap: wrap;
+                            gap: 0.6rem;
+                        }
+
+                        &.hidexs {
+                            @include xs{
+                                display: none;
+                            }
+                        }
+
+                        &.showxs {
+                            display: none
+
+                            @include xs{
+                                display: flex;
+                            }
+                        }
+
                         input,
                         select {
                             flex: 1;
