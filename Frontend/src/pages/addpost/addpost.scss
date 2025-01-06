@@ -80,7 +80,7 @@
         }
 
         &.showonxs {
-            display: none
+            display: none;
 
             @include xs{
                display: flex;
