@@ -33,6 +33,7 @@
                     // flex: 1;
                     height: 20rem;
                     display: flex;
+                    flex-wrap: wrap;
                     // padding: 1rem; 
                     // background: var(--neutralFaintColor);
                     border-radius: 0.625rem;
@@ -99,6 +100,10 @@
                                             border-radius: 0.625rem;
                                             background: var(--buyRentActiveColor);
 
+                                            @include md {
+                                                background: white;
+                                            }
+                                            
                                             @include sm {
                                                 flex-direction: column;
                                                 align-items: start;
@@ -125,7 +130,6 @@
                                         .feats {
                                             display: flex;
                                             flex-wrap: wrap;
-
                                         }
                                     }
                                 }
@@ -134,8 +138,11 @@
                                     color: black;
                                     font-size: 0.9rem;
                                     text-wrap: nowrap;
-                                }
 
+                                    @include sm {
+                                        text-wrap: wrap;
+                                    }
+                                }
                             }
                         }
 
@@ -165,6 +172,7 @@
         @include md {
             height: calc(100vh - 5rem);
             width: 100%;
+            padding-top: 1rem;
         }
 
         
@@ -256,6 +264,7 @@
                     display: flex;
                     justify-content: space-between;
                     gap: 1rem;
+                    flex-wrap: wrap;
 
                     @include md {
                        justify-content: start;
@@ -306,7 +315,7 @@
                         border: 1px solid var(--cardOverlayColor);
                         cursor: pointer;
                         display: flex;
-                        flex-wrap: no-wrap;
+                        flex-wrap: nowrap;
                         color: var(--mediumGreyColor);
                         align-items: center;
                         gap: 0.5rem;
