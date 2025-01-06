@@ -31,15 +31,12 @@
 
             @include xs {
                 gap: 0.5rem;
+                flex-wrap: wrap;
             }
 
             .restrictInput {
                 width: 100%;
-                min-width: 3rem;
-
-                @include xs {
-                    width: calc(100% - 0.5rem);
-                }
+                //min-width: 3rem;
             }
         }
     }
@@ -55,7 +52,11 @@
         @include lg {
             min-width: 7.3rem;
         }
-
+        
+        @include xs {
+            width: max-content;
+            flex: 1;
+        }  
 
         &.flexThree {
             flex: 3;
