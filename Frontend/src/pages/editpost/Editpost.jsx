@@ -205,7 +205,7 @@ const Editpost = () => {
                             <label htmlFor="bus"> Bus Station</label>
                             <input onChange={handleChange} type="number" name="bus" id="bus" min={0} placeholder='50m' defaultValue={postDetail.bus} className='restrictInput'/>
                         </span>
-                        <span className='span'>
+                        <span className='span hideonxs'>
                             <label htmlFor="restaurant">Restaurant</label>
                             <input onChange={handleChange} type="number" name="restaurant" id="restaurant" min={0} defaultValue= {postDetail.restaurant} placeholder='100m' className='restrictInput'/>
                         </span>
@@ -218,6 +218,16 @@ const Editpost = () => {
                         <span className='span'>
                             <label htmlFor="church">Church</label>
                             <input onChange={handleChange} type="number" name="church" id="church" min={0} placeholder='500m' defaultValue={postDetail.church} className='restrictInput'/>
+                        </span>
+                        <span className='span hideonxs'>
+                            <label htmlFor="gym">Gym</label>
+                            <input onChange={handleChange}type="number" name="gym" id="gym" min={0} placeholder='230m'  defaultValue={postDetail.gym} className='restrictInput'/>
+                        </span>
+                     </div>
+                     <div className="firstrow showonxs">
+                        <span className='span'>
+                            <label htmlFor="restaurant">Restaurant</label>
+                            <input onChange={handleChange} type="number" name="restaurant" id="restaurant" min={0} defaultValue= {postDetail.restaurant} placeholder='100m' className='restrictInput'/>
                         </span>
                         <span className='span'>
                             <label htmlFor="gym">Gym</label>
