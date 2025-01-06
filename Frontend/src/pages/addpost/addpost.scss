@@ -21,9 +21,17 @@
             align-items: center;
             gap: 0.8rem;
 
+            @include xs {
+                gap: 0.5rem;
+            }
+
             .restrictInput {
                 width: 100%;
                 min-width: 3rem;
+
+                @include xs {
+                    width: calc(100% - 0.5rem);
+                }
             }
         }
     }
