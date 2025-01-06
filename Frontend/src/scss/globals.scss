@@ -26,6 +26,10 @@
         position: relative;
     }
 
+    @include xs {
+        margin: 2rem 0;
+        padding-bottom: 1rem;
+    }
     //--------------------
 
     .left {
