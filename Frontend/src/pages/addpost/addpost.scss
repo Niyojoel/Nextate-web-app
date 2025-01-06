@@ -21,6 +21,14 @@
             align-items: center;
             gap: 0.8rem;
 
+            &.showonxs {
+                 display: none;
+
+                @include xs {
+                     display: flex;
+                }
+            } 
+
             @include xs {
                 gap: 0.5rem;
             }
