@@ -25,6 +25,10 @@
     &.homeWrapper {
         position: relative;
     }
+
+    @include xs {
+        margin: 1.2rem 0;
+    }
     //--------------------
 
     .left {
