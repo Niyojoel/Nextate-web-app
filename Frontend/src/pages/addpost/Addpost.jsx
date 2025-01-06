@@ -117,8 +117,38 @@ const Addpost = () => {
                             <label htmlFor="price">Price</label>
                             <input type="number" id='price' name='price' required/>
                         </span>
+                        <span className='span showonxs'>
+                            <label htmlFor="size">Total size (sqft)</label>
+                            <input type="number" name="size" id="size" min={0}  placeholder=''/>
+                        </span>
+                        <span className='span showonxs'>
+                            <label htmlFor="bedroom">Bedrooms</label>
+                            <input type="number" id='bedroom' name='bedroom' min={0} required/>
+                        </span>
+                        <span className='span showonxs'>
+                            <label htmlFor="bathroom">Bathrooms</label>
+                            <input type="number" id='bathroom' name='bathroom' min={0}/>
+                        </span>
+                        <span className='span showonxs'>
+                            <label htmlFor="income">Income Policy</label>
+                            <input type="text" name="income" id="income" placeholder='Income requirement'/>
+                        </span>
+                        <span className='span showonxs'>
+                            <label htmlFor="utilities" className='cropLabel'>Utilities Responsibility</label>
+                            <select name="utilities" id="utilities">
+                                <option value="owner">Owner's</option>
+                                <option value="tenant">Tenant's</option>
+                            </select>
+                        </span>
+                        <span className='span showonxs'>
+                            <label htmlFor="pets">Pets Policy</label>
+                            <select name="pets" id="pets">
+                                <option value="allowed">Allowed</option>
+                                <option value="not allowed">Not allowed</option>
+                            </select>
+                        </span>
                     </div>
-                    <div className="input size">
+                    <div className="input size hidexs">
                     <span className='span'>
                             <label htmlFor="size">Total size (sqft)</label>
                             <input type="number" name="size" id="size" min={0}  placeholder=''/>
@@ -132,7 +162,7 @@ const Addpost = () => {
                             <input type="number" id='bathroom' name='bathroom' min={0}/>
                         </span>
                     </div>
-                    <div className="input policy">
+                    <div className="input policy hidexs">
                         <span className='span'>
                             <label htmlFor="income">Income Policy</label>
                             <input type="text" name="income" id="income" placeholder='Income requirement'/>
