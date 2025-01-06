@@ -130,10 +130,6 @@ const Addpost = () => {
                             <input type="number" id='bathroom' name='bathroom' min={0}/>
                         </span>
                         <span className='span showonxs'>
-                            <label htmlFor="income">Income Policy</label>
-                            <input type="text" name="income" id="income" placeholder='Income requirement'/>
-                        </span>
-                        <span className='span showonxs'>
                             <label htmlFor="utilities" className='cropLabel'>Utilities Responsibility</label>
                             <select name="utilities" id="utilities">
                                 <option value="owner">Owner's</option>
@@ -146,6 +142,10 @@ const Addpost = () => {
                                 <option value="allowed">Allowed</option>
                                 <option value="not allowed">Not allowed</option>
                             </select>
+                        </span>
+                        <span className='span showonxs'>
+                            <label htmlFor="income">Income Policy</label>
+                            <input type="text" name="income" id="income" placeholder='Income requirement'/>
                         </span>
                     </div>
                     <div className="input size hidexs">
