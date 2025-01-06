@@ -223,9 +223,9 @@ const Addpost = () => {
                             </span>
                         </div>
                     </div>
-                    <button type ='submit' className='addBtn' disabled={isLoading}> 
+                    <!--<button type ='submit' className='addBtn' disabled={isLoading}>
                         {isLoading ? <FaSpinner/> : 'Add Post'}
-                    </button>
+                    </button>-->
                 </div>
             </div>
             </div>
