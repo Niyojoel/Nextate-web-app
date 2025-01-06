@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
-import './index.scss';
+import './index.css';
 import { AppProvider } from './context/useContext.jsx';
 import { SocketProvider } from './context/socketContext.jsx';
 
