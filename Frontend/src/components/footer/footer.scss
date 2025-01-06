@@ -10,14 +10,15 @@
     align-items: center;
     padding: 1rem;
     // border-top: 1px solid var(--buyRentActiveColor);
-    background : var(--buyRentActiveColor);
+    background : var(--footerColor);
     margin-top: 1rem;
     height: max-content;
     color: var(--darkGreyColor);
     z-index: 5;
 
     @include xs {
-        display: none;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     &.bcgNone {
