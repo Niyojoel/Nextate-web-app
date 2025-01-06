@@ -165,6 +165,10 @@
         align-items: center;
         justify-content: center;
 
+        @include md {
+            background-color: white;
+        }
+
         //Particular to Profile and Add post pages
         &.profileRight {
             flex: 1;
