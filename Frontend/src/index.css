@@ -45,3 +45,8 @@ button:hover, button:focus {
     appearance: none;
 }
 
+@media (max-width: 720px) {
+    html: {
+       font-size: 16px;
+    }
+}
