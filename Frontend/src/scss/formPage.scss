@@ -164,13 +164,13 @@
                         }
 
                         &.hidexs {
-                            @include xs{
+                            @include xs {
                                 display: none;
                             }
                         }
 
                         &.showxs {
-                            display: none
+                            display: none;
 
                             @include xs{
                                 display: flex;
