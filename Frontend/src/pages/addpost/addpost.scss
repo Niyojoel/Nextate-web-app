@@ -173,6 +173,13 @@
             flex-direction: column;
         }
 
+        @include xs {
+            flex-direction: row;
+            overflow-y: hidden;
+            justify-content: center;
+            max-height: 100%;
+        }
+
         .topImgSm {
             width: 80%;
             height: max-content;
@@ -191,6 +198,11 @@
                 flex-direction: column;
                 width: 100%;
             }
+
+            @include xs {
+                width: 50%;
+                flex-wrap: nowrap;
+            }
             
             span {
                 width: 47%;
@@ -205,6 +217,12 @@
 
                 @include md {
                     height: 10rem;
+                }
+
+                @include xs {
+                    min-height: 8rem;
+                    min-width: 8rem;
+                    height: 47%;
                 }
                 
                 img {
