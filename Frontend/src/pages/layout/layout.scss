@@ -8,11 +8,6 @@
     display: flex;
     overflow-y: auto;
     flex-direction: column;
-    
-    
-    @include lg {
-        // background: var(--buyRentActiveColor);
-    }
 
     @include md {
         max-width: 95%;
@@ -25,7 +20,7 @@
     }
 
     @include xs {
-        max-width: 100%;
+        padding: 0;
         // background: rgb(233, 233, 233);
     }
 }
