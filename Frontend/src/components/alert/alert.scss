@@ -12,6 +12,11 @@
     transform: translateY(-100%);
     transition: var(--linksTransition);
 
+    @include sm {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
     &.show {
         visibility: visible;
         opacity: 1;
@@ -27,6 +32,10 @@
         font-size: 0.95rem;
         transform: all 0.3s ease;
         color: white;
+
+        @include xs {
+            height: 2.1rem;
+        }
 
         &.green {
             padding: 0 0.8rem;
