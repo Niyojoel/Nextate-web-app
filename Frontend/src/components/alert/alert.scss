@@ -13,7 +13,7 @@
     transition: var(--linksTransition);
 
     @include sm {
-        //left: 30%;
+        left: 30%;
         transform: translateX(-50%);
     }
 
