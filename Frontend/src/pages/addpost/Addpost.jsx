@@ -245,7 +245,7 @@ const Addpost = () => {
                 </figure>
             </div>
             <div className="btnBox">
-                <button type= 'submit' className='addBtnMd' disabled={isLoading}> 
+                <button type='submit' className='addBtnMd' disabled={isLoading}> 
                     {isLoading ? <FaSpinner/> : 'Add'}
                 </button>
             </div>
