@@ -257,7 +257,6 @@
         background-color: var(--cardOverlayColor);
         transition: var(--linksTransition);
         cursor: pointer;
-        pointer-events: none;
 
         &:hover {
             background-color: var(--buyRentActiveColor);
@@ -266,10 +265,6 @@
 
         &:focus {
             background-color: var(--cardOverlayColor);
-        }
-
-        @include md {
-            pointer-events: all;
         }
     }
 }  
