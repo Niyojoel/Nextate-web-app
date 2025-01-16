@@ -31,7 +31,8 @@
         }
 
         @include xs {
-            display: block;
+            display: flex;
+            flex-wrap: wrap;
         }
     } 
 

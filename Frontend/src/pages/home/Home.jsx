@@ -4,10 +4,18 @@ import {Search} from '../../components';
 
 const Home = () => {
 
+  const handleSubmit =(e)=> {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    let inputs = Object.fromEntries(formData);
+    
+    console.log({...inputs})
+  }
+
   return (
     <section className='container homeWrapper'>
         <div className="left">
-          <div className='wrapper'>
+          <div className='wrapper homeWrap'>
             <figure className='banner'><img src='./imgedit.png' alt="" /></figure>
             <div className="bannerText">
               <h1 className='title'>Find Real Estate,<br/> Get The Place of Your Dream </h1>
@@ -27,6 +35,11 @@ const Home = () => {
                   <h2>Property Ready</h2>
                 </div>
               </div>
+              <form onSubmit={handleSubmit} id='data_form'>
+                <label htmlFor='text'> Text </label>
+                <input type='text' name='text' id='text'/>
+              </form>
+              <button type='submit' form='data_form'>Submit</button>
             </div>
           </div>
         </div>

@@ -42,7 +42,7 @@ const Addpost = () => {
   console.log(imgPrev)
 
   return (
-    <main className='container changeFlex'>
+    <main className='container changeFlex' style={{position: "relative"}}>
         <form className='mainForm' onSubmit={processSubmit}>
         <div className={`left spanMajority ${expand ? 'profileLeft' : undefined}`}>
             <button className={`resizeLeft ${expand && 'adjust'}`} onClick={()=>setExpand(!expand)}>
@@ -65,7 +65,7 @@ const Addpost = () => {
                             <label htmlFor="address">Address</label>
                             <input type="text" id='address' name= "address" required/>
                         </span>
-                        <span className='span coordinate'>
+                        <span className='span coordinate latnoxs'>
                             <label htmlFor="latitude">Latitude</label>
                             <input type="text" id='latitude' name='latitude' placeholder='-12.5823' required/>
                         </span>
@@ -78,6 +78,10 @@ const Addpost = () => {
                         <span className='span flexTwo'>
                             <label htmlFor="country">Country</label>
                             <input type="text" id='country' name='country' required/>
+                        </span>
+                        <span className='span coordinate latyesxs'>
+                            <label htmlFor="latitude">Latitude</label>
+                            <input type="text" id='latitude' name='latitude' placeholder='-12.5823' required/>
                         </span>
                         <span className='span coordinate'>
                             <label htmlFor="longitude">Longitude</label>
@@ -112,8 +116,39 @@ const Addpost = () => {
                             <label htmlFor="price">Price</label>
                             <input type="number" id='price' name='price' required/>
                         </span>
+                        {/* those to show on extra small device */}
+                        <span className='span latyesxs'>
+                            <label htmlFor="size">Total size (sqft)</label>
+                            <input type="number" name="size" id="size" min={0}  placeholder=''/>
+                        </span>
+                        <span className='span latyesxs'>
+                            <label htmlFor="bedroom">Bedrooms</label>
+                            <input type="number" id='bedroom' name='bedroom' min={0} required/>
+                        </span>
+                        <span className='span latyesxs'>
+                            <label htmlFor="bathroom">Bathrooms</label>
+                            <input type="number" id='bathroom' name='bathroom' min={0}/>
+                        </span>
+                        <span className='span latyesxs'>
+                            <label htmlFor="utilities" className='cropLabel'>Utilities Responsibility</label>
+                            <select name="utilities" id="utilities">
+                                <option value="owner">Owner's</option>
+                                <option value="tenant">Tenant's</option>
+                            </select>
+                        </span>
+                        <span className='span latyesxs'>
+                            <label htmlFor="pets">Pets Policy</label>
+                            <select name="pets" id="pets">
+                                <option value="allowed">Allowed</option>
+                                <option value="not allowed">Not allowed</option>
+                            </select>
+                        </span>
+                        <span className='span latyesxs'>
+                            <label htmlFor="income">Income Policy</label>
+                            <input type="text" name="income" id="income" placeholder='Income requirement'/>
+                        </span>
                     </div>
-                    <div className="input size">
+                    <div className="input size noxs">
                     <span className='span'>
                             <label htmlFor="size">Total size (sqft)</label>
                             <input type="number" name="size" id="size" min={0}  placeholder=''/>
@@ -127,7 +162,7 @@ const Addpost = () => {
                             <input type="number" id='bathroom' name='bathroom' min={0}/>
                         </span>
                     </div>
-                    <div className="input policy">
+                    <div className="input policy noxs">
                         <span className='span'>
                             <label htmlFor="income">Income Policy</label>
                             <input type="text" name="income" id="income" placeholder='Income requirement'/>
@@ -155,10 +190,10 @@ const Addpost = () => {
                             <input type="number" name="school" id="school" min={0} placeholder='200m' className='restrictInput'/>
                             </span>
                             <span className='span'>
-                                <label htmlFor="bus"> Bus Station</label>
+                                <label htmlFor="bus"> Bus </label>
                                 <input type="number" name="bus" id="bus" min={0} placeholder='50m' className='restrictInput'/>
                             </span>
-                            <span className='span'>
+                            <span className='span latnoxs'>
                                 <label htmlFor="restaurant">Restaurant</label>
                                 <input type="number" name="restaurant" id="restaurant" min={0} placeholder='100m' className='restrictInput'/>
                             </span>
@@ -171,6 +206,16 @@ const Addpost = () => {
                             <span className='span'>
                                 <label htmlFor="church">Church</label>
                                 <input type="number" name="church" id="church" min={0} placeholder='500m' className='restrictInput'/>
+                            </span>
+                            <span className='span latnoxs'>
+                                <label htmlFor="gym">Gym</label>
+                                <input type="number" name="gym" id="gym" min={0} placeholder='230m' className='restrictInput'/>
+                            </span>
+                        </div>
+                        <div className="firstrow showrowonxs">
+                            <span className='span'>
+                                <label htmlFor="restaurant">Restaurant</label>
+                                <input type="number" name="restaurant" id="restaurant" min={0} placeholder='100m' className='restrictInput'/>
                             </span>
                             <span className='span'>
                                 <label htmlFor="gym">Gym</label>
@@ -198,13 +243,6 @@ const Addpost = () => {
                         <span>{imgPrev[3] && <img src={imgPrev[3]} alt="" />}</span>
                     </div>
                 </figure>
-                <UploadWidget uwConfig={{
-                    cloudName : "JoelNiyo",
-                    uploadPreset: "Nextate",
-                    multiple: true,
-                    maxImageFileSize: 2000000,
-                    folder: "posts"
-                }}/>
             </div>
             <div className="btnBox">
                 <button type="submit"  className='addBtnMd' disabled={isLoading}> 
@@ -213,6 +251,15 @@ const Addpost = () => {
             </div>
         </div>
         </form>
+        <div className="uploadPhotosBtn">
+            <UploadWidget uwConfig={{
+                cloudName : "JoelNiyo",
+                uploadPreset: "Nextate",
+                multiple: true,
+                maxImageFileSize: 2000000,
+                folder: "posts"
+            }}/>
+        </div>
     </main>
   )
 }

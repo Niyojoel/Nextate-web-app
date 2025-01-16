@@ -60,6 +60,10 @@
                 overflow-y: auto;
                 font-size: 0.95rem;
 
+                @include sm {
+                    padding: 0.3rem 0;
+                }
+
                 .unreadIcon {
                     background-color: var(--formBtnColor);
                     width: 0.6rem;

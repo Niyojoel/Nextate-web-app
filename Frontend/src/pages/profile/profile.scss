@@ -98,6 +98,7 @@
                     width: 100%;
                     display: flex;
                     align-items: center;
+                    flex-wrap: wrap;
                     gap: 2rem;
 
                     &.topRow {
@@ -108,6 +109,11 @@
                             gap: 2rem;
                         }
 
+                        @include xs {
+                            align-items: start;
+                            gap: 1.5rem;
+                        }
+
 
                         .row1 {
                             &.row1-profile {
@@ -115,7 +121,11 @@
                                 width: max-content;
                                 justify-content: start;
                                 gap: 0.65rem;
-                                // flex-direction: column;
+                                flex-wrap: wrap;
+
+                                @include xs {
+                                    flex-direction: column;
+                                }
                             }
 
                             .partition {
@@ -128,8 +138,8 @@
 
                                     p {
                                         color: var(--fontGreyColor);
-                                        font-size: 0.91rem;
-                                        letter-spacing: 1px;
+                                        font-size: 0.9rem;
+                                        font-stretch: expanded;
                                         line-height: 1;
 
                                         span {
@@ -150,6 +160,11 @@
                             height: 4.5rem;
                             border-radius: 50%;
                             border: 5px solid var(--buyRentActiveColor);
+
+                            @include xs {
+                                width: 3.5rem;
+                                height: 3.5rem;
+                            }
 
                             img {
                                 width: 100%;
@@ -178,6 +193,10 @@
 
             @include md {
                 padding-top: 2rem;
+            }
+
+            @include xs {
+                padding: 0;
             }
         }
     }

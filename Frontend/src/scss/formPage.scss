@@ -67,7 +67,7 @@
                 }
 
                 @include xs {
-                    width: 80%;
+                    width: 75%;
                 }
 
                 //Particular to Add post
@@ -153,6 +153,25 @@
                         align-items: center;
                         gap: 0.8rem;
                         font-size: 1rem;
+
+                        @include xs {
+                            flex-wrap: wrap;
+                            gap: 0.6rem; 
+                        }
+
+                        &.noxs {
+                            @include xs {
+                                display: none;
+                            }
+                        }
+
+                        &.yesxs {
+                            display: none;
+
+                            @include xs {
+                                display: flex;
+                            }
+                        }
 
                         input,
                         select {
@@ -281,6 +300,27 @@
                 opacity: 0;
                 width: 0;
             }
+        }
+    }
+    
+    .uploadPhotosBtn {
+        position: absolute;
+        bottom: 7%;
+        right: 9%;
+        background-color: var(--cardOverlayColor);
+        width: 11rem;
+        padding: 0.8rem;
+        border-radius: 3px;
+        text-align: center;
+
+        &:hover {
+            background-color: var(--buyRentActiveColor);
+        }
+
+        @include md {
+            right: 50%;
+            bottom: 7%;
+            transform: translateX(50%)
         }
     }
 }

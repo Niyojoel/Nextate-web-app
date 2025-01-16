@@ -52,9 +52,10 @@ export const AppProvider = ({children})=> {
   
     // API communication
     const handleSubmit = async (e, endPoint, method)=> {
-        e.preventDefault();
+        e?.preventDefault();
         setIsLoading(true);
         
+        console.log(e)
         const formData = new FormData(e.target);
         let inputs;
         inputs = Object.fromEntries(formData);

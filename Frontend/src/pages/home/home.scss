@@ -6,6 +6,16 @@
 .container {
     .left {
         .wrapper {
+            &.homeWrap {
+                @include xs {
+                    padding-top: 3rem;
+                }
+
+                @include sm {
+                    height: auto;
+                }
+            }
+
             .banner {
                 position: absolute;
                 display: none;
@@ -64,7 +74,7 @@
                     color: var(--bannerTitleColor);
 
                     @include lg {
-                        font-size: 2.3rem;
+                        font-size: 2.5rem;
                         width: 92%;
                     }
 

@@ -21,12 +21,32 @@
             align-items: center;
             gap: 0.8rem;
 
-            .restrictInput {
-                width: 100%;
-                min-width: 3rem;
+            &.showrowonxs {
+                display : none;
+
+                @include xs {
+                    display: flex;
+                }
+            }
+
+            @include xs {
+                flex-wrap: wrap;
+                gap: 0.5rem; 
+            }
+
+            .span {
+
+                .restrictInput {
+                    width: 100%;
+
+                    @include xs {
+                        // width: calc(100% - 0.5rem);
+                    }
+                }
             }
         }
     }
+
 
 
     .span {
@@ -38,6 +58,11 @@
 
         @include lg {
             min-width: 7.3rem;
+        }
+
+        @include xs {
+            width: max-content;
+            flex: 1;
         }
 
 
@@ -57,6 +82,26 @@
         &.coordinate {
             width: 7.5rem;
             margin-left: 1rem;
+
+            @include xs {
+                width: max-content;
+                flex: 1;
+                margin-left: 0;
+            }
+        }
+
+        &.latnoxs {
+            @include xs {
+                display: none;
+            }
+        }
+
+        &.latyesxs {
+            display: none;
+
+            @include xs {
+                display: flex;
+            }
         }
 
         .cropLabel {
@@ -115,7 +160,7 @@
     //Particular to add post
     .imagesBox {
         max-height: 80%;
-        width: 100%;
+        height: max-content;
         display: flex;
         flex-direction: row;
         align-items: center; 
@@ -136,23 +181,31 @@
             flex-direction: column;
         }
 
+        @include xs {
+            overflow-y: hidden;
+            justify-content: center;
+            flex-direction: row;
+            max-height: 100%;
+        }
+
         .topImgSm {
             width: 80%;
             height: max-content;
             display: flex;
             flex-direction: row;
-            flex-wrap: wrap;
             align-items: center;
+            flex-wrap: wrap;
             justify-content: center;
             gap: 0.8rem;
             
-            @include md {
-                flex-direction: row;
-                width: 80%;
-            }
             
             @include sm {
                 width: 100%;
+            }
+
+            @include xs {
+                width: 50%;
+                flex-wrap: nowrap;
             }
             
             span {
@@ -168,6 +221,12 @@
 
                 @include md {
                     height: 10rem;
+                }
+
+                @include xs {
+                    min-width: 8rem;
+                    min-height: 8rem;
+                    height: 50%;
                 }
                 
                 img {
@@ -192,11 +251,13 @@
     }
 
     .addBtnMd {
-        width: 100%;
+        width: 50%;
         color: white;
         font-size: 0.9rem;
         align-self: start;
         padding: 1rem 1rem;
+        margin-top: 3rem;
+        border-radius: 3px;
         background-color: var(--cardOverlayColor);
         transition: var(--linksTransition);
         cursor: pointer;

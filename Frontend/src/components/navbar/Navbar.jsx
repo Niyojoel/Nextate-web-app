@@ -56,7 +56,7 @@ useEffect(()=> {
                 <AiOutlineMenu/>
             </button>
             <div className={`menuOverlay ${open ? 'active' : undefined} `}>
-                <div className= {`menus`}>
+                <div className= 'menus'>
                     <a href ='/'>Home</a>
                     <a href ='/about'>About</a>
                     <a href ='/contacts'>Contacts</a>

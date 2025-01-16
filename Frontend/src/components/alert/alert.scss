@@ -12,6 +12,10 @@
     transform: translateY(-100%);
     transition: var(--linksTransition);
 
+    @include sm {
+       
+    }
+
     &.show {
         visibility: visible;
         opacity: 1;

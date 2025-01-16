@@ -101,7 +101,7 @@ const SingleDetails = () => {
                   </div>
                 </div>
                 <div className="partition col2">
-                  <p className='heading'> Distances away (kms away) </p>
+                  <p className='heading'> Distances away (kms) </p>
                   {postDist.map((el, i)=> {
                     return (
                      <div className="address dist" key={uuidv4()}>
