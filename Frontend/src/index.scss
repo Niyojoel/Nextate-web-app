@@ -1,6 +1,9 @@
+@import "../src/scss/responsive.scss";
 
 html {
+    height: 100%;
     font-size: 20px;
+    box-sizing: border-box;
 }
 
 *, *::before, *::after {
@@ -11,7 +14,12 @@ html {
 
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    overflow: hidden;
+    position: relative;
+    min-height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
 }
 
 a {
@@ -22,6 +30,30 @@ a {
 
 h1, h2 {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+h1 {
+    font-size: 2.6rem; 
+    
+    @include lg {
+        font-size: 2.5rem;
+    }
+
+    @include md {
+        font-size: 2.1rem;
+    }
+
+    @include sm {
+        font-size: 2.05rem;
+    }
+
+    @include xs {
+        font-size: 1.9rem;
+    }
+}
+
+p {
+    font-weight: normal;
 }
 
 i {

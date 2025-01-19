@@ -13,8 +13,10 @@ const Layout = () => {
       </div>
       <div className='page'>
         <Outlet/>
-        <Footer/>
       </div>
+      <footer className='footer'>
+        <Footer/> 
+      </footer>
     </main>
   )
 }

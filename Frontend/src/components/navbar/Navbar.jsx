@@ -65,7 +65,7 @@ useEffect(()=> {
                     <a href ='/signin'>Sign in</a>
                     <a href ='/signup'>Sign up</a>
 
-                    <Footer bcgNone = "bcgNone"/>
+                    {/* <Footer bcgNone = "bcgNone"/> */}
                 </div>
             </div>
 

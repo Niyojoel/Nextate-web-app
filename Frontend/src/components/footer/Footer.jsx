@@ -14,7 +14,7 @@ const Footer = ({bcgNone}) => {
                 <FaTwitter/>
                 <FaInstagram/>
             </div>
-            <p>Nextate_Property</p>
+            <p>Nextate Property</p>
             </div>
             <div className="col contact">
                 <FaPhone/>

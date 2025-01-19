@@ -37,15 +37,15 @@ const AgentCard = ({agent}) => {
                 <div className='inforow'>
                     <div className="address address-agent">
                         <i className='icon'><IoPerson/></i>
-                    {agent.name}
+                        {agent.name}
                     </div>
                     <div className="address address-agent">
                         <i className='icon'><IoIosMail/></i>
-                    {agent.email}
+                        {agent.email}
                     </div>
                     <div className="address address-agent">
                         <i className='icon'><FaPhone/></i>
-                    {agent.phone}
+                        {agent.phone}
                     </div>
                 </div>
                 <div className='inforow'>
@@ -66,7 +66,7 @@ const AgentCard = ({agent}) => {
             <div className="agentInfo-bottom">
                <button className="address address-agent" onClick={()=>handleSendMessage()}>
                     <i className='icon'><FaMessage/></i>
-                    Send a Message
+                    Send Message
                 </button>
                 <button className="address address-agent" onClick={handleNavToAgentPost}>
                     <i className='icon'><FaUserPen/></i>

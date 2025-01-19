@@ -18,7 +18,7 @@ const List = () => {
   }, [])
 
   return (
-    <section className='container changeFlex'>
+    <section className='container changeFlex page_nav-gap'>
         <div className="left">
             <div className="wrapper listWrapper">
                 <Filter />
@@ -46,7 +46,7 @@ const List = () => {
                </div>
             </div>
         </div>
-        <div className="right listRight">
+        <div className="right contentRight listRight">
             <Suspense fallback={undefined}>
                 <Await resolve={posts.postResponse} errorElement={<h3>Error Loading Page</h3>}>
                     {(postResponse) => {

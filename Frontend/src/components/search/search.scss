@@ -7,8 +7,8 @@
     flex-direction: column;
     // justify-content: flex-start;
     background-color: transparent;
-
     align-items: flex-start;
+
     .type {
         button {
             padding: 0.8rem 1.3rem;
@@ -48,6 +48,7 @@
 
         }
     } 
+    
     .form {
         border: 1px solid var(--btnBorderColor);
         width: 100%;
@@ -63,6 +64,8 @@
 
         @include sm {
             width: 100%;
+            background-color: transparent;
+            height: auto;
             flex-direction: column;
             border: none;
         }
@@ -83,8 +86,12 @@
 
             @include sm {
                 width: 100%;
-                padding: 0.8rem;
+                padding: 1rem;
                 border: 1px solid var(--btnBorderColor)
+            }
+
+            @include xs {
+                padding: 0.8rem;
             }
 
         }
@@ -116,6 +123,10 @@
                 // align-self: center;
                 width: 100%;
                 min-width: 11.5rem;
+                padding: 1.2rem 1rem;
+            }
+
+            @include xs {
                 padding: 1rem;
             }
 

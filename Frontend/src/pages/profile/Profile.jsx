@@ -47,7 +47,7 @@ const Profile = () => {
   }
 
   return (
-    <section className='container changeFlex'>
+    <section className='container changeFlex page_nav-gap'>
       <div className={`left ${expand ? 'profileLeft' : undefined}`}>
           <button className={`resizeLeft ${expand ? 'adjust' : undefined}`} onClick={()=>setExpand(!expand)}>
             {!expand && <i className='icon'><FaAngleRight/></i>}
@@ -113,7 +113,7 @@ const Profile = () => {
           </div>
         </div>
       </div>
-      <div className={`right ${expand ? 'profileRight' : undefined}`}>
+      <div className={`right contentRight ${expand ? 'profileRight' : undefined}`}>
         <section className="chat">
           <h1> Messages</h1>
             <Suspense fallback={<h2>Loading...</h2>}>

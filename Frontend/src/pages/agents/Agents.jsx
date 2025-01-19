@@ -15,10 +15,11 @@ const Agents = () => {
     getPath(path)
   }, [])
   return (
-    <section className='container homeWrapper'> 
+    <section className='container homeWrapper page_nav-gap'> 
       <div className="left left-agents">
         <div className='wrapper'>
           <figure className='banner'><img src='./imgedit.png' alt="" /></figure>
+            <h2 className='agents_header'>Registered Agents</h2>
             <div className="agents">
                 <Suspense fallback={<h2>Loading...</h2>}>
                     <Await resolve={data.dataResponse} errorElement={<h3>Error Loading agents</h3>}>

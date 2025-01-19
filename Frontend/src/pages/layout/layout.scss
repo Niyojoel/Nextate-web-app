@@ -1,45 +1,61 @@
 @import "../../scss/responsive.scss";
+@import "../../scss/variables.scss";
 
 .layout {
-    height: 100vh;
-    max-width: 85%;
-    margin: 0 auto;
-    padding: 0 1.25rem;
+    min-height: 108vh;
+    height: 100%;
+    // width: 100vw;
+    // margin: 0 auto;
     display: flex;
-    overflow-y: auto;
     flex-direction: column;
-    
-    
+
     @include lg {
-        // background: var(--buyRentActiveColor);
+        // max-width: 100%;
+        padding: 0;
     }
-
-    @include md {
-        max-width: 100%;
-        // background: #8e3535;
-    }
-
+    
     @include sm {
-        max-width: 100%;
-        // background: rgb(233, 233, 233);
+        height: 100vh;
     }
 
     @include xs {
-        max-width: 100%;
-        // background: rgb(233, 233, 233);
+        overflow-y: auto;
+        height: 107.5vh;
     }
 }
 
 .navbar {
-    height: 5rem;
-    background: white;
     position: sticky;
+    height: 4.5rem;
+    // border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     top: 0;
+    background: var(--neutralNoFaintColor);
+    padding-left: var(--bodyPadding);
+    padding-right: var(--bodyPadding);
     z-index: 20;
+
+    @include md {
+        background: white;
+    }
 }
 
 .page {
     flex: 1;
     display: flex;
     flex-direction: column;
+    margin-left: var(--bodyPadding);
+    // padding-right: var(--bodyPadding);
+
+    @include xs {
+        margin: 1.2rem 0;
+        margin-left: var(--bodyPadding);
+    }
+}
+
+.footer {
+    position: absolute;
+    padding: 1rem var(--bodyPadding);
+    bottom: 0;
+    right: 0;
+    left: 0;
 }

@@ -2,7 +2,6 @@
 
 .agentCard {
     width: max-content;
-    min-width: 30rem;
     display: flex;
     gap: 2rem;
     padding: 1rem;
@@ -10,6 +9,15 @@
     border-radius: 0.625rem;
     background: var(--neutralLightColor);
     transition: var(--linksTransition);
+
+    @include sm {
+        gap: 1rem;
+    }
+
+    @include xs {
+        flex-direction: column;
+        align-items: center;
+    }
 
     a {
         align-self: flex-start;
@@ -27,18 +35,31 @@
 
     .agentInfo {
         flex: 1;
-        flex-direction: column;
         display: flex;
-        gap: 1.5rem;
+        flex-direction: column;
+        gap: 1rem;
 
         .agentInfo-top {
+            flex: 1;
             display: flex;
             gap: 3rem;
+
+            @include xs {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
 
             .inforow {
                 display: flex;  
                 flex-direction: column;
+                // width: 100%;
                 gap: 0.5rem;
+            }
+        }
+
+        .address{
+            &.address-agent {
+                // font-size: 17px;
             }
         }
 
@@ -46,7 +67,13 @@
             width: 100%;
             display: flex;
             align-items: center;
-            gap: 2rem;            
+            gap: 1rem;   
+            
+            @include xs {
+                flex-direction: column;
+                align-items: start;
+                gap: 0.5rem;
+            }
             
             .address {
                 &.address-agent {
@@ -57,6 +84,7 @@
                     border-radius: 0.3rem;
                     cursor: pointer;
                     color: var(--fontGreyColor);
+                    // font-size: 0.75rem;
                     transition: all 200ms ease-out;
 
                     &:hover {

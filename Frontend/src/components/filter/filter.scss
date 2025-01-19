@@ -12,7 +12,7 @@
         text-transform: capitalize;
 
         b {
-            background-color: var(--buyRentActiveColor);
+            // background-color: var(--buyRentActiveColor);
             padding: 0.25rem;
         }
     }  
@@ -79,8 +79,8 @@
     }
     button {
         flex: 1;
-        width: 6.25rem;
-        min-width: 6.25rem; 
+        width: 100%;
+        // min-width: 6.25rem; 
         // max-width: 6.25rem; //make better responsiveness
         padding: 1rem 0.625rem;
         display: flex;

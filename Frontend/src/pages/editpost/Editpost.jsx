@@ -14,7 +14,8 @@ const Editpost = () => {
     const {pathname} = useResolvedPath()
 
     const path = pathname.split("/")[2];
-
+    const [screenSize, setScreenSize] = useState(window.innerWidth < 1100 ? "small" : "large")
+ 
     const {postDetail} = post;
 
     const handleChange = (e)=> {
@@ -53,14 +54,19 @@ const Editpost = () => {
   }, [imgPrev]);
 
   useEffect(()=> {
-      getPath(path);
-    }, []);
+    getPath(path);
+    const changeScreenSize = ()=> window.innerWidth < 1100 ? setScreenSize("small") : setScreenSize("large");
+    window.addEventListener('resize', changeScreenSize)
+
+    return ()=> window.removeEventListener('resize', changeScreenSize)
+  }, []);
+
 
     console.log(imgPrev);
 
   return (
-    <section className='container changeFlex'>
-    <form className='mainForm' onSubmit={processSubmit}>
+    <section className='container changeFlex page_nav-gap'>
+    <div className='mainForm'>
       <div className={`left spanMajority ${expand ? 'profileLeft' : undefined}`}>
         <button className={`resizeLeft ${expand && 'adjust'}`} onClick={()=>setExpand(!expand)}>
             {!expand && <i className='icon'><FaAngleRight/></i>}
@@ -70,7 +76,7 @@ const Editpost = () => {
           {message && <Alert/>}
           <div className="connectform addPost">
               <h1>Edit Post</h1>
-              <div className='loginform addPost2' onSubmit={processSubmit}>
+              <form className='loginform addPost2' onSubmit={processSubmit}>
                 <div className="input titleHead">
                     <span className='span'>
                         <label htmlFor="title">Title</label>
@@ -194,14 +200,14 @@ const Editpost = () => {
                         </span>
                      </div>
                 </div>
-                <button type="submit" className={changeMade === false ? "addBtn changeNotmade" : "addBtn"} disabled={isLoading}> 
+                {screenSize === "large" && (<button type="submit" className={changeMade === false ? "addBtn changeNotmade" : "addBtn"} disabled={isLoading}> 
                     {isLoading ? <FaSpinner/> : 'Edit Post'}
-                </button>
-              </div>
+                </button>) }
+              </form>
           </div>
         </div>
       </div>
-       <div className={`right redesign ${expand && 'profileRight'}`}>
+       <div className={`right redesign contentRight ${expand && 'profileRight'}`}>
             <div className="featuredImgs">
               <p className='featuredImg'>Featured Images</p>
                 <figure className="imagesBox"> 
@@ -222,13 +228,13 @@ const Editpost = () => {
                     folder: "posts"
                 }}/>
             </div>      
-            <div className="btnBox">
+            { screenSize === "small" && (<div className="btnBox">
                 <button type="submit" className='addBtnMd' disabled={isLoading}> 
                     {isLoading ? <FaSpinner/> : 'Edit'}
                 </button>
-            </div>
+            </div>)}
         </div>
-        </form>
+        </div>
     </section>
   )
 }

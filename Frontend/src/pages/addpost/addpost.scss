@@ -3,6 +3,7 @@
 @import "../../scss/globals.scss";
 @import "../../scss/formPage.scss";
 
+
 .desc {
     margin: 1rem 0;
 }
@@ -256,7 +257,7 @@
         font-size: 0.9rem;
         align-self: start;
         padding: 1rem 1rem;
-        margin-top: 3rem;
+        // margin-top: 3rem;
         border-radius: 3px;
         background-color: var(--cardOverlayColor);
         transition: var(--linksTransition);

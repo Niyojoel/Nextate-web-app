@@ -20,7 +20,8 @@ const SingleDetails = () => {
   const {postDetail} = post;
   const {church, school, bus, mall, restaurant, gym} = postDetail;
   const places= ["Church", "School", "Bus", "Mall", "Restaurant", "Gym"]
-  const postDist = [church, school, bus, restaurant, mall, gym]
+  const postDist = [church && church, school, bus, restaurant, mall, gym]
+  console.log(postDetail);
   
   const [saved, setSaved] = useState(post.isSaved && post.savedPosts.includes(user?._id));
   const [favorite, setFavorite] = useState(post.isFavorite);
@@ -65,7 +66,7 @@ const SingleDetails = () => {
   }
 
   return (
-    <section className='container changeFlex'> 
+    <section className='container changeFlex page_nav-gap'> 
       <div className="left">
         <div className="wrapper singlesWrapper">
             <Slider imgs = {post.images}/>
@@ -147,7 +148,7 @@ const SingleDetails = () => {
         </div>
         </div>
       </div>
-      <div className="right">
+      <div className="right contentRight">
         <div className="rightfeatures">
           <div className="rightrow">
             <p className='title'>General</p>
@@ -192,7 +193,7 @@ const SingleDetails = () => {
               </div>
             </div>
           </div>
-          <div className="rightrow">           
+          {postDist.find(post=> post !== "") && <div className="rightrow">           
             <p className='title'>Nearby Facilities</p>
             <div className="listHorizontal nearby">
               {postDist.sort((a, b)=> a - b).slice(0, 3).map((el, i)=> {
@@ -207,7 +208,7 @@ const SingleDetails = () => {
                 )
               })}
             </div>
-          </div>
+          </div>}
           <div className="rightrow">
             <p className='title'>Location</p>
             <div className="mapContainer">

@@ -1,6 +1,7 @@
 @import "./responsive.scss";
 
 :root {
+    --bodyPadding: calc(7.5% + 1.25rem);
     --pageRightBcgColor: #fcf5f3;
     --btnBcgColor: #fece51;
     --btnBcgLightColor: #ffdc85;
@@ -17,6 +18,7 @@
     --neutralLightColor: rgb(224, 224, 224);
     --neutralLighterColor: rgb(234, 234, 234);
     --neutralFaintColor: rgba(242, 242, 242, 0.6);
+    --neutralNoFaintColor: rgba(245, 245, 245);
     --buyRentActiveColor: rgb(180, 193, 208);
     --footerColor: rgba(180, 193, 208, 0.3);
     --cardImgOverlay: rgba(32, 52, 74, 0.5);
@@ -24,4 +26,11 @@
     --cardOverlayColor: #305882;
     --bannerTitleColor: rgb(22, 22, 22);
 }
+
+@media (max-width: 1366px) {
+    :root {
+        --bodyPadding: calc(5%)
+    }
+}
+
 
