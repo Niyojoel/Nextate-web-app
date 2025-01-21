@@ -14,7 +14,7 @@ export const SocketProvider = ({ children }) => {
   const [socket, setSocket] = useState(null);
 
   useEffect(()=> {
-    return setSocket(io("http://localhost:4000"));
+    return setSocket(io(process.env.SOCKET_ENDPOINT_URL));
   }, [])
 
   useEffect(()=> {
