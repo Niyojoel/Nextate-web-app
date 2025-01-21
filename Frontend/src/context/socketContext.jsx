@@ -14,7 +14,7 @@ export const SocketProvider = ({ children }) => {
   const [socket, setSocket] = useState(null);
 
   useEffect(()=> {
-    return setSocket(io("https://nextate-socket.onrender.com"));
+    return setSocket(io(process.env.SOCKET_ENDPOINT_URL));
   }, [])
 
   useEffect(()=> {
