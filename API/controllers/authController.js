@@ -86,9 +86,11 @@ export const login = async (req, res) => {
         httpOnly: true,
         maxAge: expiryTime, //one week expiry
         secure: process.env.NODE_ENV === "production" ? true : false, //for production on a https connection mode
+        path: "/",
+        sameSite: "None",
       })
       .status(200)
-      .json({ message: "Login successful", data: {...userInfo} });
+      .json({ message: "Login successful", data: { ...userInfo } });
   } catch (err) {
     console.log(err);
     res.status(500).json({ message: "Failed to login" });
