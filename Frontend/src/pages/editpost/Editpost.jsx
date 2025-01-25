@@ -77,7 +77,7 @@ const Editpost = () => {
           {message && <Alert/>}
           <div className="connectform addPost">
               <h1>Edit Post</h1>
-              <div className='loginform addPost2'>
+              <form className='loginform addPost2' onSubmit={processSubmit}>
                 <div className="input titleHead">
                     <span className='span'>
                         <label htmlFor="title">Title</label>
@@ -243,7 +243,7 @@ const Editpost = () => {
                 </div>
                 {screenSize === "large" && (<button type="submit" className={changeMade === false ? "addBtn changeNotmade" : "addBtn"} disabled={isLoading}> 
                     {isLoading ? <FaSpinner/> : 'Edit Post'}
-                </button>) }
+                </button>)}
               </form>
           </div>
         </div>
