@@ -38,10 +38,9 @@ export const getPosts = async (req, res) => {
           ...(agentId && { user: agentId }),
         });
       };
-
-      console.log(posts.length)
-      console.log((await Post.find({})).length);
-
+        
+      console.log(posts)
+        
       let agent;
       if (agentId) {
         agent = await User.findById(agentId).select(
@@ -60,7 +59,8 @@ export const getPosts = async (req, res) => {
 
 export const createPost = async (req, res) => {
     const {desc, country, size, income, utilities, pets, school, bus, restaurant, mall, church, gym, ...postBody} = req.body;
-
+    console.log(req.body)
+    
     const tokenUserId = req.userId;
 
     try{
@@ -84,6 +84,8 @@ export const createPost = async (req, res) => {
       });
 
       await User.findByIdAndUpdate(tokenUserId, {$push: {posts: [post._id]}});
+
+       console.log(post) 
 
       res.status(200).json({message: "Post created successfully", data: post})
     } catch (err){
@@ -123,10 +125,6 @@ export const editPost = async (req, res) => {
   const id = req.params.id;
   const tokenUserId = req.userId;
   const {desc, country, size, income, utilities, pets, school, bus, restaurant, mall, church, gym, ...postBody} = req.body;
-  console.log(req.files)
-
-  console.log(req.body.images.file);
-  console.log(req.body.images)
 
   try {
     const post = await Post.findById(id);

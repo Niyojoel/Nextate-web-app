@@ -34,6 +34,7 @@
                     height: 20rem;
                     display: flex;
                     flex-wrap: wrap;
+                    flex-wrap: wrap;
                     // padding: 1rem; 
                     // background: var(--neutralFaintColor);
                     border-radius: 0.625rem;
@@ -135,7 +136,6 @@
                                         .feats {
                                             display: flex;
                                             flex-wrap: wrap;
-
                                         }
                                     }
                                 }
@@ -145,7 +145,6 @@
                                     font-size: 0.9rem;
                                     text-wrap: no-wrap;
                                 }
-
                             }
                         }
 
@@ -155,6 +154,7 @@
                             font-size: 0.9rem;
                             font-weight: 650;
                             margin-bottom: 0.3rem;
+                            text-wrap: wrap;
                             text-wrap: wrap;
                         }
                         .desc {
@@ -175,6 +175,7 @@
         @include md {
             height: calc(100vh - 5rem);
             width: 100%;
+            padding-top: 1rem;
             padding-top: 1rem;
         }
         
@@ -211,6 +212,7 @@
                     font-size: 0.88rem;
                     color: black;
                     text-wrap: nowrap;
+                    text-wrap: nowrap;
                 }
                 
                 i {
@@ -223,6 +225,7 @@
                     font-weight: 600;
                     color: rgb(35, 35, 35);
                     text-transform: capitalize;
+                    text-wrap: nowrap;
                     text-wrap: nowrap;
                 }
     
@@ -322,6 +325,7 @@
                         border: 1px solid var(--cardOverlayColor);
                         cursor: pointer;
                         display: flex;
+                        flex-wrap: nowrap;
                         flex-wrap: nowrap;
                         color: var(--mediumGreyColor);
                         align-items: center;

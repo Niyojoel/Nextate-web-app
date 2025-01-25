@@ -100,6 +100,7 @@
                     align-items: center;
                     flex-wrap: wrap;
                     gap: 2rem;
+                    flex-wrap: wrap;
 
                     &.topRow {
                         padding-bottom: 1rem;
@@ -138,6 +139,8 @@
 
                                     p {
                                         color: var(--fontGreyColor);
+                                        font-size: 0.9rem;
+                                        font-stretch: expanded;
                                         font-size: 0.9rem;
                                         font-stretch: expanded;
                                         line-height: 1;

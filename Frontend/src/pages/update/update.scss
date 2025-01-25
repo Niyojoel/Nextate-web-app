@@ -5,12 +5,16 @@
 
 .updateTopBox {
     position: absolute;
+    position: absolute;
     height: max-content;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     
     @include md {
+        top: 2rem;
+        left: 50%;
+        transform: translateX(-10%);
         top: 2rem;
         left: 50%;
         transform: translateX(-10%);

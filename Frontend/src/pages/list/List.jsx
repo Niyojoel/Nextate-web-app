@@ -36,7 +36,7 @@ const List = () => {
                     <Await resolve={posts.postResponse} errorElement={<h3>Error Loading Page</h3>}>
                         {(postResponse) => {
                         return <div className='propertyList'>
-                        {postResponse.data.data.posts.map((post, i)=> {
+                        {postResponse?.data.data.posts.map((post, i)=> {
                         return <Card key={i} post={post}/>
                         })}
                         </div>
@@ -50,7 +50,7 @@ const List = () => {
             <Suspense fallback={undefined}>
                 <Await resolve={posts.postResponse} errorElement={<h3>Error Loading Page</h3>}>
                     {(postResponse) => {
-                    return <Map locations = {postResponse.data.data.posts}/>
+                    return postResponse?.data?.data && <Map locations = {postResponse.data.data.posts}/>
                     }}
                 </Await>
             </Suspense>

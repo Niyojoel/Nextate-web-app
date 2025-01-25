@@ -39,6 +39,10 @@
             border-radius: 5px;
             font-size: 0.875rem;
             text-transform: capitalize;
+
+            @include xs {
+               border-radius: 2px;
+            }
         }
     }
 
@@ -59,9 +63,13 @@
             gap: 0.5rem
         }
 
+        @imclude md {
+           gap: 0.35rem;
+        }
         .item {
             flex: 1;
             input, select {
+                width: 100%;
                 width: 100%;
                 min-width: 5rem;
                 
@@ -71,6 +79,7 @@
                 }
 
                 @include md{
+                    width: 100%;
                     width: 100%;
                 }
             }
@@ -94,6 +103,10 @@
         margin-left: auto;
         transition: all 0.4s ease;
 
+        @include md {
+            flex: 1;
+            width: 100%;
+        }
         @include md {
             flex: 1;
             width: 100%;

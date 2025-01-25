@@ -32,6 +32,10 @@
         transform: all 0.3s ease;
         color: white;
 
+        @include xs {
+            height: 2.1rem;
+        }
+
         &.green {
             padding: 0 0.8rem;
             background-color: rgb(66, 209, 66);

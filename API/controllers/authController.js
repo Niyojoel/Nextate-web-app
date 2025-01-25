@@ -48,15 +48,10 @@ export const signup = async (req, res) => {
 export const login = async (req, res) => {
   const { email, password } = req.body;
 
-  console.log(req.body);
-
   try {
     //Check if user exist
     const user = await User.findOne({ email }).select("+password");
-    const users = await User.find({});
 
-    console.log(user);
-    console.log(users);
     if (!user) {
       return res.status(401).json({ message: "Invalid Credentials!" });
     }
@@ -69,20 +64,19 @@ export const login = async (req, res) => {
     }
     //Generate token and send
     const expiryTime = 1000 * 60 * 60 * 24 * (process.env.JWT_EXPIRY * 1);
-
+    
     const token = jwt.sign(
       {
-        id: user.id,
-        isAdmin: true,
+        id: user.id
       },
       process.env.JWT_SECRET_KEY,
       { expiresIn: expiryTime }
     );
 
     const { password: userPassword, ...userInfo } = user._doc;
-
-    res
-      .cookie("token", token, {
+    console.log(token);
+    
+    res.cookie("token", token, {
         httpOnly: true,
         maxAge: expiryTime, //one week expiry
         secure: process.env.NODE_ENV === "production" ? true : false, //for production on a https connection mode

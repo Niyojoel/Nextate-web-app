@@ -62,7 +62,8 @@
                 height: 100%;
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
+                //justify-content: center;
+                padding-top: 5rem;
                 gap: 3rem;
                 z-index: 5;
 
@@ -73,7 +74,7 @@
                 
                 @include sm {
                     width: 100%;
-                    gap: 2.3rem;
+                    gap: 2rem;
                     padding-bottom: 6rem;
                     padding-right: var(--bodyPadding);
                     justify-content: flex-start;
@@ -127,6 +128,10 @@
                             @include lg {
                                 font-size: 1.7rem
                             }
+
+                            @include sm {
+                                font-size: 1.4rem
+                            }
                         }
 
                         h2 {
@@ -135,6 +140,10 @@
 
                             @include lg {
                                 font-size: 1.1rem
+                            }
+
+                            @include sm {
+                                font-size: 1rem
                             }
                         }
                     }

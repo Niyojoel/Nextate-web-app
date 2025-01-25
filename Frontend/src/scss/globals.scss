@@ -31,6 +31,12 @@
     &.homeWrapper {
         position: relative;
     }
+
+    @include xs {
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        padding-left: 1rem;
+    }
     //--------------------
 
     .left {
@@ -172,8 +178,14 @@
         height: 100%;
         flex: 2;
         display: flex;
+        background-color: var(--footerColor);
         align-items: center;
         justify-content: center;
+
+        @include md {
+            background-color: white;
+        }
+
         
         //Particular to Profile and Add post pages
         &.profileRight {

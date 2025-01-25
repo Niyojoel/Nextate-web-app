@@ -50,6 +50,7 @@
 
 
 
+
     .span {
         width: 100%;
         display: flex;
@@ -201,7 +202,13 @@
             
             
             @include sm {
+                flex-direction: column;
                 width: 100%;
+            }
+
+            @include xs {
+                width: 50%;
+                flex-wrap: nowrap;
             }
 
             @include xs {
@@ -242,13 +249,15 @@
 
 .btnBox {
     display: none;
-    width: 100%;
-    padding: 2rem 0;
     background-color: white;
+    justify-content: center;
+    pointer-events: none;
 
     @include md {
         display: flex;
-        justify-content: center;
+        width: 100%;
+        padding: 2rem 0;
+        pointer-events: all;
     }
 
     .addBtnMd {
@@ -273,3 +282,15 @@
         }
     }
 }  
+
+.uploadPhotoBtn {
+    position: absolute;
+    bottom: 7%;
+    right: 10%;
+
+    @include md {
+       right: 50%;
+       bottom: 7%;
+       transform: translateX(50%);
+    }
+}

@@ -3,6 +3,8 @@
 @import "./globals.scss";
 
 .container {
+    position: relative;
+    
     .mainForm {
         display: flex;
         width: 100%;
@@ -38,7 +40,7 @@
                 align-self: center;
                 flex-direction: column;
                 justify-content: center;
-                gap:  1.5rem;
+                gap: 1.5rem;
                 margin-top: -2.5rem;
 
                 @include lg {
@@ -68,6 +70,7 @@
                 }
 
                 @include xs {
+                    width: 75%;
                     width: 75%;
                 }
 
@@ -142,9 +145,11 @@
 
                     .addBtn {
                         margin-bottom: 2rem;
+                        pointer-events: all;
 
                         @include md {
                             display: none;
+                            pointer-events: none;
                         }
                     }
 

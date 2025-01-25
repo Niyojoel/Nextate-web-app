@@ -8,25 +8,31 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background : var(--buyRentActiveColor);
+    padding: 1rem;
+    // border-top: 1px solid var(--buyRentActiveColor);
+    background : var(--footerColor);
     margin-top: 1rem;
     height: max-content;
     color: var(--darkGreyColor);
     z-index: 5;
 
+    @include xs {
+       display: none;
+    }
+
     &.bcgNone {
-        display: block;
+        display: flex;
+        flex-wrap: wrap;
         border-top: none;
         background: transparent;
         margin-top: auto;
 
         @include md {
-            display: none;
+            visibility: hidden;
         }
 
         @include xs {
-            display: flex;
-            flex-wrap: wrap;
+            visibility: visible;
         }
     } 
 

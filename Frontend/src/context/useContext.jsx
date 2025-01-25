@@ -66,6 +66,10 @@ export const AppProvider = ({children})=> {
             return setPassMatch("fail");
         }
 
+        if(path === "addpost" && !imgPrev.length) {
+            return showAlert("Post images required", 'fail');
+        }
+
         try {
             let res;
             if(method === "post") res = apiRequest.post(endPoint, {

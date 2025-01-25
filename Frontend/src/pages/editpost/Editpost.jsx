@@ -23,6 +23,7 @@ const Editpost = () => {
     };
 
   const processSubmit = async (e)=>{ 
+    console.log('editing initiated');
     try{
       const res = await handleSubmit(e, `/posts/${post._id}`, "patch");
       const data = await res.data;
@@ -76,7 +77,7 @@ const Editpost = () => {
           {message && <Alert/>}
           <div className="connectform addPost">
               <h1>Edit Post</h1>
-              <form className='loginform addPost2' onSubmit={processSubmit}>
+              <div className='loginform addPost2'>
                 <div className="input titleHead">
                     <span className='span'>
                         <label htmlFor="title">Title</label>
@@ -134,8 +135,38 @@ const Editpost = () => {
                         <label htmlFor="price">Price</label>
                         <input onChange={handleChange} type="number" id='price' name='price'  defaultValue={post.price} required/>
                     </span>
+                    <span className='span showonxs'>
+                        <label htmlFor="size">Total size (sqft)</label>
+                        <input onChange={handleChange} type="number" name="size" id="size" min={0} defaultValue={postDetail.size} placeholder='1200'/>
+                    </span>
+                    <span className='span showonxs'>
+                        <label htmlFor="bedroom">Bedrooms</label>
+                        <input onChange={handleChange}type="number" id='bedroom' name='bedroom' min={0}  defaultValue={post.bedroom} required/>
+                    </span>
+                    <span className='span showonxs'>
+                        <label htmlFor="bathroom">Bathrooms</label>
+                        <input onChange={handleChange}type="number" id='bathroom' name='bathroom'  defaultValue={post.bathroom} min={0}/>
+                    </span>
+                    <span className='span showonxs'>
+                        <label htmlFor="utilities" className='cropLabel'>Utilities Responsibility</label>
+                        <select name="utilities" id="utilities" defaultValue={postDetail.utilities}>
+                            <option value="owner">Owner's</option>
+                            <option value="tenant">Tenant's</option>
+                        </select>
+                    </span>
+                    <span className='span showonxs'>
+                        <label htmlFor="pets">Pets Policy</label>
+                        <select name="pets" id="pets" defaultValue={postDetail.pet}>
+                            <option value="allowed">Allowed</option>
+                            <option value="not allowed">Not allowed</option>
+                        </select>
+                    </span>
+                    <span className='span showonxs'>
+                        <label htmlFor="income">Income Policy</label>
+                        <input onChange={handleChange}type="text" name="income" id="income"  defaultValue={postDetail.income} placeholder='Income requirement'/>
+                    </span>
                 </div>
-                <div className="input size">
+                <div className="input size hidexs">
                    <span className='span'>
                         <label htmlFor="size">Total size (sqft)</label>
                         <input onChange={handleChange} type="number" name="size" id="size" min={0} defaultValue={postDetail.size} placeholder='1200'/>
@@ -149,7 +180,7 @@ const Editpost = () => {
                         <input onChange={handleChange}type="number" id='bathroom' name='bathroom'  defaultValue={post.bathroom} min={0}/>
                     </span>
                 </div>
-                <div className="input policy">
+                <div className="input policy hidexs">
                     <span className='span'>
                         <label htmlFor="income">Income Policy</label>
                         <input onChange={handleChange}type="text" name="income" id="income"  defaultValue={postDetail.income} placeholder='Income requirement'/>
@@ -180,7 +211,7 @@ const Editpost = () => {
                             <label htmlFor="bus"> Bus Station</label>
                             <input onChange={handleChange} type="number" name="bus" id="bus" min={0} placeholder='50m' defaultValue={postDetail.bus} className='restrictInput'/>
                         </span>
-                        <span className='span'>
+                        <span className='span hideonxs'>
                             <label htmlFor="restaurant">Restaurant</label>
                             <input onChange={handleChange} type="number" name="restaurant" id="restaurant" min={0} defaultValue= {postDetail.restaurant} placeholder='100m' className='restrictInput'/>
                         </span>
@@ -193,6 +224,16 @@ const Editpost = () => {
                         <span className='span'>
                             <label htmlFor="church">Church</label>
                             <input onChange={handleChange} type="number" name="church" id="church" min={0} placeholder='500m' defaultValue={postDetail.church} className='restrictInput'/>
+                        </span>
+                        <span className='span hideonxs'>
+                            <label htmlFor="gym">Gym</label>
+                            <input onChange={handleChange}type="number" name="gym" id="gym" min={0} placeholder='230m'  defaultValue={postDetail.gym} className='restrictInput'/>
+                        </span>
+                     </div>
+                     <div className="firstrow showonxs">
+                        <span className='span'>
+                            <label htmlFor="restaurant">Restaurant</label>
+                            <input onChange={handleChange} type="number" name="restaurant" id="restaurant" min={0} defaultValue= {postDetail.restaurant} placeholder='100m' className='restrictInput'/>
                         </span>
                         <span className='span'>
                             <label htmlFor="gym">Gym</label>

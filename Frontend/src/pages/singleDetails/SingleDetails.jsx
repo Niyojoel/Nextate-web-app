@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import "./singleDetails.scss";
+import "./singleDetails.scss";
 import {Slider, Features, Map} from "../../components";
 import {FaBath,FaBorderAll, FaBus, FaPhone, FaRegBookmark, FaRegEdit, FaRegStar, FaShoppingCart, FaStar} from 'react-icons/fa';
 import {IoBedOutline, IoCashOutline, IoConstructOutline, IoPerson, IoRestaurant, IoSchool } from "react-icons/io5";
@@ -101,17 +102,20 @@ const SingleDetails = () => {
                     {postDetail.size || size}m sq area.
                   </div>
                 </div>
+                {(church || school || bus || mall || restaurant || gym) &&
                 <div className="partition col2">
                   <p className='heading'> Distances away (kms) </p>
                   {postDist.map((el, i)=> {
-                    return (
+                    if (el) return (
                      <div className="address dist" key={uuidv4()}>
                       <i className='icon'>{distAwayIcons[i]}</i>
                       {places[i]} : {el?.toString().length >= 4 ? `${el/1000} km` : `${el} m`}
                     </div>
-                    )
+                    );
+                    return;
                   })}
                 </div>
+                }
                 <div className="partition col3">
                   <div className="user">
                     <p className='heading'> Agent's info</p>
@@ -237,11 +241,11 @@ const SingleDetails = () => {
                 <button type='button' onClick={handleSave}>
                   {saved ? 
                     <><i><FaBookmark/></i> Saved</>
-                    :<><i><FaRegBookmark/></i> Save the Place</>}
+                    :<><i><FaRegBookmark/></i> Save </>}
                 </button>
                 <button onClick={()=>handleSendMessage(post.user._id)}>
                   <i><FaRegMessage/></i>
-                  Send Message
+                  Message
                 </button>
               </div>
             }
